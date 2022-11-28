@@ -26,4 +26,7 @@ export const obj = [
     {
       name: "Ilxom",
     },
+    {
+      name: "akow",
+    },
   ];
