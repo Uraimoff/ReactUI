@@ -14,4 +14,16 @@ export const obj = [
     {
       name: "Islom",
     },
+    {
+      name: "Akmal",
+    },
+    {
+      name: "Webbrain",
+    },
+    {
+      name: "Xurshid",
+    },
+    {
+      name: "Ilxom",
+    },
   ];
