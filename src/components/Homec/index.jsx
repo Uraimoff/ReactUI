@@ -1,6 +1,6 @@
 import React from "react";
 import Access from "../Access";
-import { Container, H1, Img, WrCont } from "./styled";
+import { Container, H1, Img } from "./styled";
 import whiteFbi from './../../assets/img/whiteFbi.png'
 import './style.css'
 
