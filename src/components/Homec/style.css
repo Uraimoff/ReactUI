@@ -1,0 +1,14 @@
+.imgWr{
+    /* width: 160px; */
+    /* overflow: hidden; */
+    margin: auto;
+    /* gap: 50px; */
+    /* margin: auto; */
+    width: 200px;
+}
+.wr{
+    align-items: center;
+    justify-content: center;
+    /* display: flex; */
+
+}

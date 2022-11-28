@@ -1,10 +1,11 @@
 import './App.css';
-import Access from './components/Access';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
-    <Access/>
+    
+    <Home/>
     </>
   );
 }
