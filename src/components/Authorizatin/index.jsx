@@ -1,10 +1,10 @@
 import React from "react";
-// import Access from "../Access";
-import { Container, H1, Img } from "./styled";
+import Access from "../Access";
+import { Container, H1, Img } from "../Homec/styled";
 import whiteFbi from './../../assets/img/whiteFbi.png'
-import './style.css'
 
-const Homec = () => {
+
+const Authorizatin = () => {
   return (
     <>
       <Container>
@@ -12,13 +12,12 @@ const Homec = () => {
           <div className="wr">
         <Img src={whiteFbi} alt='FBI'/>
         <H1>F.B.I</H1>
-        <div style={{color: "white"}}>Home page</div>
           </div>
         </div>
-        {/* <Access/> */}
+        <Access/>
       </Container>
     </>
   );
 };
 
-export default Homec;
+export default Authorizatin;
