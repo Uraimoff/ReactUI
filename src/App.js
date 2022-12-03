@@ -28,7 +28,7 @@ function App() {
           // <Redirect to="/login" /> 
         )}
         <Route path="*" element={<h1 style={{color: "white"}}>404 Not Found</h1>} />
-        <Route path="/" element={<Navigate to={"/auth"} />} />
+        <Route path="/" element={<Navigate to={localStorage.getItem('token')? "/home" : "/auth"} />} />
       </Routes>
     </>
   );
