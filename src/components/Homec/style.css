@@ -5,10 +5,12 @@
     /* gap: 50px; */
     /* margin: auto; */
     width: 200px;
+    display: flex;
+    justify-content: center;
 }
 .wr{
     align-items: center;
     justify-content: center;
-    /* display: flex; */
-
+    display: flex;
+    flex-direction: column;
 }
