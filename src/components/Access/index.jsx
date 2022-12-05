@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Button, Input, Positioner } from "./style";
 import { obj } from "../mock/data";
 import { useNavigate } from "react-router-dom";
