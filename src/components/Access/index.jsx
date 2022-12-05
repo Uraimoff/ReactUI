@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Input, Positioner } from "./style";
 import { obj } from "../mock/data";
 import { useNavigate } from "react-router-dom";
@@ -34,19 +34,19 @@ const Submit=()=>{
   setCom(comparison)
   setColors(colr)
   if(response){
-    localStorage.setItem("token", tokn)
-    // alert('You will be redirected')
+    localStorage.setItem("token", tokn[0])
+    alert('You will be redirected')
     info()
     setTimeout(()=>{
       navigate('/home')
     },1000)
   }
 }
-// console.log(val);
+console.log(colors, "bu length error");
 // console.log(com);
   return (
     <>
-      <Positioner style={{backgroundColor: `${val===com ? `green` : colors.length < 1 ? "black" : "red"}`, color: `${val===com ? `black` : `black`}`,}}>
+      <Positioner style={{backgroundColor: `${val===com ? `green` : colors.length <= 1 ? "black" : "red"}`, color: `${val===com ? `black` : `black`}`,}}>
         {val}
         <Input onChange={onChange} name='name' type='password' placeholder="****" />
         <Button onClick={Submit}>Authorize</Button>
