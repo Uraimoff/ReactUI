@@ -14,7 +14,7 @@ function App() {
     } else if (token !== null) {
       navigate("/home");
     }
-  }, [token]);
+  }, [token, navigate]);
   console.log(token, "bu token");
   return (
     <>
