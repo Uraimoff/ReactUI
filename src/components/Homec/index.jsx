@@ -1,24 +1,38 @@
 import React from "react";
-// import Access from "../Access";
-import { Container, H1, Img } from "./styled";
-import whiteFbi from './../../assets/img/whiteFbi.png'
+import { BackgroundVideoWr, BlackWrapper, Container, H1, HomeWrapper, Img, UniversTxt } from "./styled";
 import './style.css'
+import videoBg from './../../assets/video/videoBg.mp4' 
+import react from './../../assets/svg/react.svg'
+import { Buttons } from "../Generic";
+import { useNavigate } from "react-router-dom";
 
 const Homec = () => {
+  const navigate = useNavigate()
   return (
     <>
+    <BackgroundVideoWr>
+      <video id="myVideo" autoPlay loop muted src={videoBg}/>
+    </BackgroundVideoWr>
+    <HomeWrapper>
       <Container>
         <div className="imgWr">
           <div className="wr">
-        <Img src={whiteFbi} alt='FBI'/>
-        <H1>React JS</H1>
-        <h1 style={{color: "white"}}>You're in Home page <br/> Home page Coming soon...</h1>
-        <h2 style={{color: "red"}}>DISCLAIMER!</h2>
-        <div style={{color: "white"}}>This site is not intended to ridicule, harass, or disrespect any government agency</div>
-          </div>
+        <H1>React Component</H1>
+        <UniversTxt>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe libero officiis hic sequi magni explicabo velit magnam inventore pariatur ex! Enim tempora nisi a nihil facilis inventore similique dolores odit.</UniversTxt>
+        <div className="butt">
+        <Buttons onClick={()=>navigate('/component')} radius={'20px'} txt={"Get started"} color={"white"} border={'none'} background={'#007FFF'}/>
+        <Buttons onClick={()=>navigate('/component')} radius={'20px'} txt={"View on Github"} color={"white"} border={'none'} background={'#3A3A3A'}/>
         </div>
-        {/* <Access/> */}
+          </div>
+          <Img className='App-logo logo' src={react} alt='React'/>
+        </div>
       </Container>
+        <BlackWrapper>
+          <Container>
+          React
+          </Container>
+        </BlackWrapper>
+    </HomeWrapper>
     </>
   );
 };

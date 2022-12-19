@@ -1,0 +1,36 @@
+.placemove{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: white;
+    z-index: 999;
+    display: none;
+    transition: all 2s;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.input:focus-within .placemove{
+    transition: all 2s;
+    position: absolute;
+    top: -10px;
+    z-index: 999;
+    position: absolute;
+    display: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: red;
+    transform: scale(0.7);
+    
+    /* left: ${icon ? `30px` : `15px`}; */
+}
+.input{
+    /* background: #000; */
+    width: 100%;
+}

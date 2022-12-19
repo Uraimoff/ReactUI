@@ -1,7 +1,13 @@
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { navbar } from "./utils/navbar";
+import {navbar } from "./utils/navbar";
 import Authorization from "./pages/Authorization";
 import { useEffect } from "react";
 
@@ -11,10 +17,10 @@ function App() {
   useEffect(() => {
     if (token === null) {
       navigate("/auth");
-    } else if (token !== null) {
-      navigate("/home");
     }
   }, [token, navigate]);
+  const location = useLocation();
+  console.log(location.pathname, "bu sayt location");
   console.log(token, "bu token");
   return (
     <>
@@ -24,16 +30,20 @@ function App() {
         ) : token ? (
           <>
             <Route element={<Navbar />}>
-              {navbar.map((value, index) => (
-                <Route key={index} path={value.path} element={value.element} />
-              ))}
+              {navbar.map(
+                (value, index) => 
+                  !value.hidden && (
+                    <Route
+                      key={index}
+                      path={`${value.path}`}
+                      element={value.element}
+                    />
+                  )
+              )}
             </Route>
           </>
         ) : null}
-        <Route
-          path="*"
-          element={<h1 style={{ color: "white" }}>404 Not Found</h1>}
-        />
+        <Route path="*" element={<Navigate to={"/home"} />} />
         <Route
           path="/"
           element={

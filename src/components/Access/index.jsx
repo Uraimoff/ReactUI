@@ -24,8 +24,6 @@ const Access = () => {
     let data = obj.map((item) => item.name);
     let tokn = obj.map((item) => item.token);
     let response = data.includes(body.name);
-    // console.log(tokn)
-    // console.log(response);
 const Submit=()=>{
   let value = response ? `Welcome ${body.name}` : `Access denied ${body.name}`
   let comparison = `Welcome ${body.name}` 
@@ -46,7 +44,7 @@ console.log(colors, "bu length error");
 // console.log(com);
   return (
     <>
-      <Positioner style={{backgroundColor: `${val===com ? `green` : colors.length <= 1 ? "black" : "red"}`, color: `${val===com ? `black` : `black`}`,}}>
+      <Positioner style={{backgroundColor: `${val===com ? `green` : colors.length <= 1 ? "#222222" : "red"}`, color: `${val===com ? `black` : `black`}`,}}>
         {val}
         <Input onChange={onChange} name='name' type='password' placeholder="****" />
         <Button onClick={Submit}>Authorize</Button>
