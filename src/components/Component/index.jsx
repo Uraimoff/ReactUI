@@ -10,11 +10,11 @@ const Component = () => {
     <>
       <ComponentWr>
         <SideNav />
-        {navbar.filter((value) => {
-          !value.component &&
-            location.pathname === value.path &&
-            (<div>{value[0].title}</div>)
-        })}
+        {navbar.filter(
+          (value) =>
+            { return !value.component &&
+            location.pathname === value.path && <div>{value[0].title}</div>
+            })} 
       </ComponentWr>
     </>
   );
