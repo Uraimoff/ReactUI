@@ -6,16 +6,6 @@ import { ComponentWr } from "./style";
 
 const Component = () => {
   const location = useLocation();
-  console.log(
-    navbar.filter(
-      (value) => !value.component && location.pathname === value.path(value.title)
-      
-    ), "bu natika filter"
-  );
-  console.error(navbar.filter(
-    (value) => !value.component && location.pathname === value.path,
-    "bu natika filter"
-  ), "bu error")
   return (
     <>
       <ComponentWr>

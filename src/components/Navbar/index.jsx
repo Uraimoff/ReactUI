@@ -1,12 +1,11 @@
 import React from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { navbar } from '../../utils/navbar'
 import react from './../../assets/svg/react.svg'
 import { Container, H3, Link, Logo, Main, Nav, Opacity, OutWr, Section, Wrapper } from './style'
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const location = useLocation()
   // console.log( typeof location.pathname, " bu page location");
   return (
     <>
