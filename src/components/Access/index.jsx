@@ -10,7 +10,16 @@ const Access = () => {
     const [com, setCom] = useState([])
     const [colors, setColors] = useState([])
     const navigate = useNavigate()
+    const [messageApi, contextHolder]= message.useMessage();
+    const key='updateable'
 
+    const openMassage=()=>{
+      messageApi.open({
+        key,
+        type: 'loading',
+        content: 'Loading...'
+      })
+    }
     const info =()=>{
       message.info('You will be redirected')
     }

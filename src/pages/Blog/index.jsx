@@ -1,8 +1,9 @@
 import React from 'react'
+import Parallax from '../../components/Parallax'
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <div><Parallax/></div>
   )
 }
 
