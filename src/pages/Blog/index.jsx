@@ -1,9 +1,11 @@
 import React from 'react'
-import Parallax from '../../components/Parallax'
+import NoData from '../../components/NoData'
 
 const Blog = () => {
   return (
-    <div><Parallax/></div>
+    <div>Blog
+    <NoData/>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import NoData from '../../components/NoData'
 
 const Guide = () => {
   return (
-    <div>Guide</div>
+    <div>Guide
+    <NoData/>
+    </div>
   )
 }
 

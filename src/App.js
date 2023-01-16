@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import {navbar } from "./utils/navbar";
 import Authorization from "./pages/Authorization";
 import { useEffect } from "react";
+import LaoyoutS from "./components/LayoutS";
 
 function App() {
   const navigate = useNavigate();
@@ -37,7 +38,8 @@ function App() {
                       key={index}
                       path={`${value.path}`}
                       element={value.element}
-                    />
+                    >
+                    </Route>
                   )
               )}
             </Route>

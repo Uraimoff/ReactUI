@@ -1,18 +1,16 @@
 import React from 'react'
-import SideNav from '../../SideNav'
-import Buttons from '../Buttons'
+import NoData from '../../NoData'
+import { Nodat } from '../Inputs/style'
+import { YandexMapWr } from './style'
 
 const AllComponent = () => {
-    const component =[
-        {
-            element: <Buttons/>
-        }
-    ]
-
   return (
     <>
-    <SideNav/>
-    <div>{component.map((item)=>item.element)}</div>
+    <YandexMapWr>Maps Coming Soon...
+      <Nodat>
+    <NoData/>
+      </Nodat>
+    </YandexMapWr>
     </>
   )
 }

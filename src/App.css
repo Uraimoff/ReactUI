@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+  border-radius: 50%;
+
 }
 
 .App-logo {
   /* height: 40vmin; */
   pointer-events: none;
+  border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+*::selection {
+  color: white;
+  background-color: rgb(171, 171, 171);
 }

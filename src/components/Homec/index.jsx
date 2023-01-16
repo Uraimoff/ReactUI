@@ -21,7 +21,7 @@ const Homec = () => {
         <UniversTxt>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe libero officiis hic sequi magni explicabo velit magnam inventore pariatur ex! Enim tempora nisi a nihil facilis inventore similique dolores odit.</UniversTxt>
         <div className="butt">
         <Buttons onClick={()=>navigate('/component')} radius={'20px'} txt={"Get started"} color={"white"} border={'none'} background={'#007FFF'}/>
-        <Buttons onClick={()=>navigate('/component')} radius={'20px'} txt={"View on Github"} color={"white"} border={'none'} background={'#3A3A3A'}/>
+       <a className="buttonA" href="https://github.com/Uraimoff/ReactUI" target="_blank"  rel="noreferrer"><Buttons  radius={'20px'} txt={`${"View on Github"}`} color={"white"} border={'none'} background={'#3A3A3A'}/></a> 
         </div>
           </div>
           <Img className='App-logo logo' src={react} alt='React'/>
@@ -29,7 +29,7 @@ const Homec = () => {
       </Container>
         <BlackWrapper>
           <Container>
-          React
+          React ❤'s you
           </Container>
         </BlackWrapper>
     </HomeWrapper>

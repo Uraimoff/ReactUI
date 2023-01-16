@@ -19,6 +19,7 @@ const Container= styled.div`
     justify-content: center;
     align-items: center !important;
     flex-direction: column;
+    overflow: hidden;
     margin: 0 auto;
     height: 740px;
     text-align: center;

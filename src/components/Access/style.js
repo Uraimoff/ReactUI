@@ -15,7 +15,7 @@ max-width: 550px;
 min-width: 350px;
 padding: 30px;
 width:100%; 
-height: 300px;
+height: 250px;
 margin: 50px auto;
 font-size: 30px;
 font-weight: 700;

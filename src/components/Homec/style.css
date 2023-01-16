@@ -31,3 +31,8 @@
         z-index: 888;
         background-color: transparent;
     }
+    .buttonA{
+        /* background-color: aquamarine; */
+        text-decoration: none;
+        border-radius: 50px;
+    }

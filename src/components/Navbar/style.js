@@ -89,6 +89,7 @@ background-color:  transparent;
 height: 30px;
 padding: 0px 10px;
 transition: all 0.4s;
+font-family: 'Montserrat';
 :hover{
     background-color:  transparent;
     padding: 0px 10px;
