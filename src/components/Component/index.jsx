@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { navbar } from "../../utils/navbar";
 import NoData from "../NoData";
 import SideNav from "../SideNav";
 import { ComponentWr } from "./style";

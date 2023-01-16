@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
-import { SideNavItem, SideNavWr, Link } from "./style";
+import { SideNavItem, SideNavWr } from "./style";
 
 const SideNav = () => {
   const Active = {

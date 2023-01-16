@@ -10,7 +10,7 @@ const Access = () => {
     const [com, setCom] = useState([])
     const [colors, setColors] = useState([])
     const navigate = useNavigate()
-    const [messageApi, contextHolder]= message.useMessage();
+    const [messageApi]= message.useMessage();
     const key='updateable'
 
     const openMassage=()=>{
@@ -20,6 +20,7 @@ const Access = () => {
         content: 'Loading...'
       })
     }
+    console.log(openMassage(), "bu nma boldi");
     const info =()=>{
       message.info('You will be redirected')
     }
