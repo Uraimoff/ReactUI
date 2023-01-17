@@ -1,7 +1,7 @@
 import React from 'react'
 import ComponentTable from '../../ComponentTable'
-import NoData from '../../NoData'
-import { Nodat } from '../Inputs/style'
+// import NoData from '../../NoData'
+// import { Nodat } from '../Inputs/style'
 
 const Buttons = () => {
   const ButtonPrimary=(

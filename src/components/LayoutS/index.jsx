@@ -1,21 +1,21 @@
 import React from "react";
 import ForSideAds from "../ForSideAds";
 import SideNav from "../SideNav";
-import uzFlag from "./../../assets/img/uzbFlag.png";
+// import uzFlag from "./../../assets/img/uzbFlag.png";
 import {
-  AdsContainer,
-  AdsWrapper,
+  // AdsContainer,
+  // AdsWrapper,
   ChildrenWr,
-  Div,
-  FlagWr,
-  Img,
+  // Div,
+  // FlagWr,
+  // Img,
   LayoutWr,
-  P,
+  // P,
   SideNavW,
-  SpaN,
-  SpAN,
-  Span,
-  Supportment,
+  // SpaN,
+  // SpAN,
+  // Span,
+  // Supportment,
 } from "./style";
 
 const LaoyoutS = ({ children }) => {
