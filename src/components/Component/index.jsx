@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import NoData from "../NoData";
+import ForSideAds from "../ForSideAds";
 import SideNav from "../SideNav";
 import { ComponentWr } from "./style";
 
@@ -11,8 +11,9 @@ const Component = () => {
     <>
       <ComponentWr style={{color:"white "}}>
         <SideNav/>
-    <NoData/>
+    {/* <NoData/> */}
       </ComponentWr>
+      <ForSideAds/>
     </>
   );
 };

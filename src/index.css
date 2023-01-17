@@ -18,3 +18,24 @@ code {
 :root{
   --Primary-color: #03274b;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a7a3a3;
+  height: 7px !important;
+  border-radius: 15px;
+}
+
+.body-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 7px;
+  background-color: #0f0f0f;
+}
+
+.body-scrollbar::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 15px;
+}

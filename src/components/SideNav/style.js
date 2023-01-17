@@ -6,8 +6,8 @@ const SideNavWr=styled.div`
  width: 300px;
  z-index: 666;
  background: #000;
- height: 200%;
  overflow-y: auto;
+ height: 200%;
 `
 const SideNavItem = styled.div`
     padding: 10px 20px 10px 30px;
