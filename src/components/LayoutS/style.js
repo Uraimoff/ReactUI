@@ -10,23 +10,34 @@ top: 100px;
 left: 0;
 overflow-y: auto;
 height: 100%;*/
-  height: calc(100vh - 60px);
-  overflow: hidden;
+/* overflow: hidden; */
+
+/* background-color: #0f0f0f; */
+  /* height: calc(100vh - 60px);
   position: sticky;
-  top: 60px;
+  top: 100px;
+  z-index: 777;
   transition: overflow-y 0.3s linear;
-  background-color: #0f0f0f;
+  width: calc(400px + 20px);
   :hover {
+    width: 420px;
     overflow-y: scroll;
     transition: overflow-y 0.3s linear;
-  }
-`;
+  } */
+  `;
 const ChildrenWr = styled.div`
-  position: fixed;
+/* overflow-y: scroll;
+transition: overflow-y 0.3s linear; */
+  /* position: sticky;
   top: 100px;
-  left: 400px;
-  width: 100%;
-  height: 100%;
+  z-index: 666;
+  left: 700px;
+  width: 100%; */
+  /* height: 100%; */
+
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background-color: #000;
 `;
 
 export { LayoutWr, SideNavW, ChildrenWr, };

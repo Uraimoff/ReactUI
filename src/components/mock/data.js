@@ -1,3 +1,7 @@
+export const ButtonComponent=`
+<button>Hello</button>
+`
+
 export const obj = [
     {
       name: "Ibrohim",

@@ -6,9 +6,10 @@ import { SideNavItem, SideNavWr } from "./style";
 const SideNav = () => {
   const Active = {
     color: "#e3e3e3",
-    background: "white",
-    width: "200px",
+    width: "relative",
     textDecoration: "none",
+    overflow: 'hidden',
+    borderRadius: "5px",
     fontFamily: 'Montserrat',
     fontWeight: "600"
   };
