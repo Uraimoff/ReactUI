@@ -4,7 +4,7 @@ const ChatContainer = styled.div`
   /* width: 100%; */
   /* border: 1px red solid; */
   height: 100%;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   /* background: red; */
   border-radius: 10px;
@@ -17,6 +17,7 @@ width: 100%;
 background: inherit;
 display: flex;
 flex-direction: column;
+overflow-y: scroll;
 
 `;
 const ChatQuestion= styled.div`
@@ -41,12 +42,11 @@ const InputWrapper = styled.div`
   box-sizing: border-box;
   overflow: hidden;
 `;
-const Input = styled.textarea`
+const Input = styled.input`
   border: none;
   height: 47px;
   background-color: inherit;
   outline: none;
-  line-height: auto;
   width: calc(100% - 80px);
 `;
 const Button = styled.button`
