@@ -69,4 +69,3 @@ const ChatGpt = () => {
 
 export default ChatGpt;
 
-// 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
