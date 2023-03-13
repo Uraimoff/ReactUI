@@ -2,7 +2,6 @@ import {
   Navigate,
   Route,
   Routes,
-  useLocation,
   useNavigate,
 } from "react-router-dom";
 import "./App.css";
@@ -21,9 +20,9 @@ function App() {
       navigate("/auth");
     }
   }, [token, navigate]);
-  const location = useLocation();
-  console.log(location.pathname, "bu sayt location");
-  console.log(token, "bu token");
+  // const location = useLocation();
+  // console.log(location.pathname, "bu sayt location");
+  // console.log(token, "bu token");
   return (
     <>
       <Routes>

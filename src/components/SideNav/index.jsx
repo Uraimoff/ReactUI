@@ -25,7 +25,7 @@ const SideNav = () => {
         {navbar.map(
           (value) =>
             value.component && (
-              <NavLink
+              <NavLink key={value.title}
               style={({ isActive }) =>
               isActive ? Active : NotActive
             }

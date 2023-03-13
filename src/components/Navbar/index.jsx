@@ -31,7 +31,7 @@ const Navbar = () => {
     return value === location.pathname;
   });
   const asdas = dato[0];
-  console.log(dato, "filtr");
+  // console.log(dato, "filtr");
   return (
     <>
       <Container>

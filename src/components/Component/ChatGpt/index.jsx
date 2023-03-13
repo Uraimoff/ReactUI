@@ -16,6 +16,7 @@ const ChatGpt = () => {
   const press = (e) => {
     if (e.key === "Enter") {
       setChat([...chat, { type: "user", message: e.target.value }]);
+      console.log(e.target.value, 'bu press value');
       setValue("");
       fetch("http://localhost:8080", {
         method: "POST",
@@ -28,7 +29,24 @@ const ChatGpt = () => {
       })
         .then((res) => res.json())
         .then((res) => setChat((chat)=>[...chat, {type: 'ai', message: res}]));
-    }
+      }
+  };
+  const Press = (e) => {
+      setChat([...chat, { type: "user", message: e.target.value }]);
+      console.log(e.target.value, 'bu press value');
+      setValue("");
+      fetch("http://localhost:8080", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: value,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => setChat((chat)=>[...chat, {type: 'ai', message: res}]));
+    
   };
   //https://www.youtube.com/watch?v=PNOgR-Ab_8k
   //https://chat.openai.com/chat
@@ -46,22 +64,16 @@ const ChatGpt = () => {
             </>
           );
         })}
-        {/* <ChatAnswer>
-          <span>Bot:</span> A chatbot is a computer program that simulates human
-          conversation through voice commands or text chats or both. It can be
-          integrated with various messaging platforms like Facebook Messenger,
-          WhatsApp, WeChat, etc. and can be used for a variety of purposes, such
-          as customer service, entertainment, and e-commerce.
-        </ChatAnswer> */}
       </ChatWrapper>
       <InputWrapper>
         <Input
+          placeholder="Ask whatever you want"
           type={"text"}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={press}
         ></Input>
-        <Button>Send</Button>
+        <Button onClick={Press}>Send</Button>
       </InputWrapper>
     </ChatContainer>
   );
