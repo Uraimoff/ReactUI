@@ -5,7 +5,7 @@ import flash from './../../../assets/svg/flash.svg'
 
 const MusicPlayer = () => {
   const [batteryLevel, setBatteryLevel] = useState(null);
-  const [battery, setBattery] = useState(0.29);
+  // const [battery, setBattery] = useState(0.29);
   const [batteryCharging, setBatteryCharging] = useState(null);
 
   useEffect(() => {
