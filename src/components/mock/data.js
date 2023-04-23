@@ -5,44 +5,39 @@ export const ButtonComponent=`
 export const obj = [
     {
       name: "Ibrohim",
-      token: "asdvdffghkfdffdsll112"
+      token: "Ibrohimasdvdffghkfdffdsll112"
     },
     {
       name: "Murod",
-      token: "asdfghfsdfkllfds112"
+      token: "Murodasdfghfsdfkllfds112"
     },
     {
       name: "Abdulloh",
-      token: "asdfghkklkll112"
+      token: "Abdullohasdfghkklkll112"
     },
     {
       name: "Sanjar",
-      token: "asdfghkfsdfllfds112"
+      token: "Sanjarasdfghkfsdfllfds112"
     },
     {
       name: "Islom",
-      token: "asdfghkdffdskll112"
+      token: "Islomasdfghkdffdskll112"
     },
     {
       name: "Akmal",
-      token: "asdfghkklkllfds12"
+      token: "Akmalasdfghkklkllfds12"
     },
     {
       name: "Webbrain",
-      token: "asdfghkklklldsff"
-    },
-    {
-      name: "Xurshid",
-      token: "asdfghkklkllfsdfds"
-
+      token: "Webbrainasdfghkklklldsff"
     },
     {
       name: "Ilxom",
-      token: "asdfghkklkll112"
+      token: "Ilxomasdfghkklkll112"
     },
     {
       name: "akow",
-      token: "asdfghkklklldcsc"
+      token: "akowasdfghkklklldcsc"
     },
   ];
 

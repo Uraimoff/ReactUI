@@ -20,7 +20,6 @@ const Access = () => {
         content: 'Loading...'
       })
     }
-    console.log(openMassage(), "bu nma boldi");
     const info =()=>{
       message.info('You will be redirected')
     }
@@ -32,17 +31,20 @@ const Access = () => {
         });
     };
     let data = obj.map((item) => item.name);
-    let tokn = obj.map((item) => item.token);
+    console.log(data, "bu data malumot");
+    const jane = obj.find(obj => obj.name === body.name);
+    // const took = jane.token
     let response = data.includes(body.name);
 const Submit=()=>{
   let value = response ? `Welcome ${body.name}` : `Access denied ${body.name}`
-  let comparison = `Welcome ${body.name}` 
+  let comparison = `Welcome ${body.name}`
   let colr =  body.name
   setVal(value)
   setCom(comparison)
   setColors(colr)
   if(response){
-    localStorage.setItem("token", tokn[0])
+    openMassage()
+    localStorage.setItem("token", jane.token)
     alert('You will be redirected')
     info()
     setTimeout(()=>{
