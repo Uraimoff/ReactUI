@@ -45,5 +45,10 @@ const Button = styled.button`
         opacity: 0.6;
     }
 `
+const AccessP = styled.p`
+    background-color: transparent;
+    font-size: 18px;
+    color: white;
+`
 
-export { Positioner, Input, Button };
+export { Positioner, Input, Button, AccessP };

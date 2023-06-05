@@ -1,5 +1,5 @@
 import React, {  useState } from "react";
-import { Button, Input, Positioner } from "./style";
+import { AccessP, Button, Input, Positioner } from "./style";
 import { obj } from "../mock/data";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
@@ -34,6 +34,7 @@ const Access = () => {
     console.log(data, "bu data malumot");
     const jane = obj.find(obj => obj.name === body.name);
     // const took = jane.token
+    // make tokens admin, superAdmin 
     let response = data.includes(body.name);
 const Submit=()=>{
   let value = response ? `Welcome ${body.name}` : `Access denied ${body.name}`
@@ -58,6 +59,9 @@ console.log(colors, "bu length error");
     <>
       <Positioner style={{backgroundColor: `${val===com ? `green` : colors.length <= 1 ? "#222222" : "red"}`, color: `${val===com ? `black` : `black`}`,}}>
         {val}
+        <AccessP>
+        Enter Authors name
+        </AccessP>
         <Input onChange={onChange} name='name' type='password' placeholder="****" />
         <Button onClick={Submit}>Authorize</Button>
       </Positioner>

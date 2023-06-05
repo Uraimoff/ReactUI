@@ -1,35 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ComponentTable from '../../ComponentTable'
-// import NoData from '../../NoData'
-// import { Nodat } from '../Inputs/style'
+import axios from 'axios'
+import NoData from '../../NoData'
+import { Nodat } from '../Inputs/style'
 
 const Buttons = () => {
-  const ButtonPrimary=
-   
-     <div>Hello muchachos</div>
-    
-  
-  const Stringed= ('"', ButtonPrimary, '"')
-  console.log(typeof '`',ButtonPrimary,'`', "stringed");
+  const [button, setButton]= useState(null)
+  const ButtonPrimary=<h1>Hello muchachos</h1>
 
-  var myHTML= "<div><h1>Jimbo.</h1><p>That's what she said</p></div>";
+// https://647880a0362560649a2dea0d.mockapi.io/ui/component/buttons
+// this is code and data from backend
+useEffect(() => {
+  axios.get('https://647880a0362560649a2dea0d.mockapi.io/ui/component/buttons')
+    .then(response => {
+      setButton(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}, []);
 
-var strippedHtml = myHTML.replace(/<[^>]+>/g, '');
+console.log(button, 'user malumot');
 
-// Jimbo.
-// That's what she said
-console.log(strippedHtml, "from string");
   return (
+    <>
+    {button ?
     <div style={{color: "white"}}>
-    <ComponentTable Content={ButtonPrimary.string} Title={Stringed} Descriptions={'Description de Button'}/>
-    Hello
-    <ComponentTable Content={ButtonPrimary.string} Title={'Title de Button'} Descriptions={'Description de Button'}/>
-    
-    <ComponentTable Content={ButtonPrimary.string} Title={'Title de Button'} Descriptions={'Description de Button'}/>
-    {/* <Nodat>
-    <NoData/>
-    </Nodat> */}
+      {button.map(dat=>
+    <ComponentTable key={dat.id} Content={dat.component} Title={dat.name} Descriptions={dat.code} code={dat.code}/>
+        )}
     </div>
+    :
+    <Nodat>
+    <NoData/>
+  </Nodat>
+}
+  </>
   )
 }
 
