@@ -31,12 +31,31 @@ const Access = () => {
         });
     };
     let data = obj.map((item) => item.name);
-    console.log(data, "bu data malumot");
+    // console.log(data, "bu data malumot");
     const jane = obj.find(obj => obj.name === body.name);
     // const took = jane.token
     // make tokens admin, superAdmin 
     let response = data.includes(body.name);
-const Submit=()=>{
+    const press=(e)=>{
+      if (e.key === "Enter") {
+      let value = response ? `Welcome ${body.name}` : `Access denied ${body.name}`
+  let comparison = `Welcome ${body.name}`
+  let colr =  body.name
+  setVal(value)
+  setCom(comparison)
+  setColors(colr)
+  if(response){
+    openMassage()
+    localStorage.setItem("token", jane.token)
+    alert('You will be redirected')
+    info()
+    setTimeout(()=>{
+      navigate('/home')
+    },1000)
+  }
+}
+    }
+const Submit  =()=>{
   let value = response ? `Welcome ${body.name}` : `Access denied ${body.name}`
   let comparison = `Welcome ${body.name}`
   let colr =  body.name
@@ -53,7 +72,7 @@ const Submit=()=>{
     },1000)
   }
 }
-console.log(colors, "bu length error");
+// console.log(colors, "bu length error");
 // console.log(com);
   return (
     <>
@@ -62,7 +81,7 @@ console.log(colors, "bu length error");
         <AccessP>
         Enter Authors name
         </AccessP>
-        <Input onChange={onChange} name='name' type='password' placeholder="****" />
+        <Input onChange={onChange} onKeyDown={press} name='name' type='password' placeholder="****" />
         <Button onClick={Submit}>Authorize</Button>
       </Positioner>
     </>

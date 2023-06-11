@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+    import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container=styled.div`
@@ -82,12 +82,14 @@ width: 50px
 `
 
 const Link = styled(NavLink)`
-/* padding: 32px; */
 color: white;
 text-decoration:none;
 background-color:  transparent;
 height: 30px;
 padding: 0px 10px;
+gap: 5px;
+align-items: center;
+display: flex;
 transition: all 0.4s;
 font-family: 'Montserrat';
 :hover{
@@ -95,8 +97,8 @@ font-family: 'Montserrat';
     padding: 0px 10px;
     height: 30px;
     /* margin: 12px; */
-    border-radius: 5px;
-    color: grey;
+    /* border-radius: 5px; */
+    opacity: 0.4;
 }
 :active{
     padding: 0px 10px;
@@ -107,6 +109,10 @@ font-family: 'Montserrat';
     border-radius: 5px;
     color: #f5f7da;
 }
+`
+const Outimg = styled.img`
+background: transparent;
+height: 20px;
 `
 const Nav = styled.div`
 display: flex;
@@ -163,4 +169,4 @@ line-height: 20px;
 const OutWr= styled.div`
 padding-top: 100px;
 `
-export {Container,Wrapper,DropdownWr,Opacity,OutWr, DropdownMenu, Section, Logo, Link, H3, Main, Main2, Nav, PhoneNavbar, LoginButton, LoginIcon}
+export {Container,Wrapper,DropdownWr,Opacity,OutWr,Outimg, DropdownMenu, Section, Logo, Link, H3, Main, Main2, Nav, PhoneNavbar, LoginButton, LoginIcon}
