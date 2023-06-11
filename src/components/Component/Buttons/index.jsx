@@ -6,7 +6,6 @@ import { Nodat } from '../Inputs/style'
 
 const Buttons = () => {
   const [button, setButton]= useState(null)
-  const ButtonPrimary=<h1>Hello muchachos</h1>
 
 // https://647880a0362560649a2dea0d.mockapi.io/ui/component/buttons
 // this is code and data from backend
