@@ -51,11 +51,18 @@ display: flex;
 align-items: center;
 width: 100%;
 justify-content: space-between;
-@media only screen and(max-width: 768px) {
-    padding: 0 !important;
+@media only screen and (max-width: 768px) {
     margin: 0 !important;
     display: flex;
     justify-content: space-between;
+    padding: 0 60px;
+}
+@media only screen and (max-width: 576px) {
+    /* padding: 0 !important; */
+    margin: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
 }
 
 
@@ -69,11 +76,15 @@ background-color: transparent;
 font-size: 16px;
 line-height: 24px;
 cursor: pointer;
+position: relative;
 `
 const H3 = styled.h3`
 color: white;
 background-color: transparent;
 margin-bottom: 0;
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 const Logo =styled.img`
 background-color: transparent;
@@ -103,11 +114,13 @@ font-family: 'Montserrat';
 :active{
     padding: 0px 10px;
     height: 30px;
-    background-color:#253C6a;
     /* padding: 5px 20px; */
     /* margin: 12px; */
     border-radius: 5px;
     color: #f5f7da;
+}
+@media only screen and (max-width: 1200px) {
+    display: none;
 }
 `
 const Outimg = styled.img`
@@ -122,13 +135,13 @@ min-width: 400px;
 background-color: transparent;
 max-width: 420px;
 z-index: 999;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
     display: none;
 }
 `
 const PhoneNavbar = styled.div`
 display: none;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
     display: block;
 }
 `
@@ -142,7 +155,6 @@ const LoginIcon = styled.div`
 display: none;
 @media only screen and (max-width: 768px) {
     display: block;
-    margin-left: 100px;
 }
 `
 const DropdownWr= styled.div`
@@ -169,4 +181,69 @@ line-height: 20px;
 const OutWr= styled.div`
 padding-top: 100px;
 `
-export {Container,Wrapper,DropdownWr,Opacity,OutWr,Outimg, DropdownMenu, Section, Logo, Link, H3, Main, Main2, Nav, PhoneNavbar, LoginButton, LoginIcon}
+
+const Input= styled.input`
+    background-color: transparent;
+    outline : none;
+    border: none;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 200px;
+    @media only screen and (max-width: 860px) {
+    max-width: 400px;
+}
+`
+const Span= styled.span`
+background-color: transparent;
+font-size:13px;
+font-family: monospace;
+padding: 5px;
+border: 1px solid gray;
+border-radius: 5px;
+cursor: default;
+color: gray;
+position: absolute;
+right: 20px;
+opacity: ${props => (props.isActive ? 0 : 1)};
+  transition: opacity 0.3s ease-in-out;
+`
+
+const Results = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: transparent;
+  top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  background: #808080;
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  -webkit-box-shadow: -2px 1px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: -2px 1px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: -2px 1px 8px 0px rgba(34, 60, 80, 0.2);
+`
+const ResultItem = styled.li`
+  padding: 10px;
+  background: ${(props) => (props.selected ? '#808080' : '#262626')};
+  &:hover{
+    background: #808080;
+  }
+  ;
+`
+const Burger=styled.div`
+height: 20px;
+display: none;
+@media only screen and (max-width: 860px) {
+    display: block;
+    height: 20px;
+    border: gray 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    background: transparent;
+}
+`
+export {Container,Wrapper,Burger,Input,Span,ResultItem,Results,DropdownWr,Opacity,OutWr,Outimg, DropdownMenu, Section, Logo, Link, H3, Main, Main2, Nav, PhoneNavbar, LoginButton, LoginIcon}

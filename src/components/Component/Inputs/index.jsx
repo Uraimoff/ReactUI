@@ -1,13 +1,15 @@
 import React from 'react'
-import NoData from '../../NoData'
-import { Nodat } from './style'
+// import PasswordToggle from './password'
+// import NoData from '../../NoData'
+// import { Nodat } from './style'
 
 const Inputs = () => {
   return (
     <div style={{color: "white"}}>Inputs Coming Soon...
-    <Nodat>
+  {/* <PasswordToggle/> */}
+    {/* <Nodat>
     <NoData/>
-    </Nodat>
+    </Nodat> */}
     </div>
   )
 }

@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ## Available Demo version of the site
 
-Netlify: https://fbi-usa.netlify.app
+Netlify: https://react-ui-uraimoff.netlify.app
 
 ### `npm start`
 

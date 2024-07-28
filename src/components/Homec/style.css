@@ -31,7 +31,20 @@
         z-index: 888;
         background-color: transparent;
     }
+    
     .buttonA{
         text-decoration: none;
         border-radius: 50px;
+    }
+    @media only screen and (max-width: 570px) {
+        .butt{
+            margin-top: 50px;
+            display: flex;
+            /* gap: 30px; */
+            justify-content: space-around;
+            z-index: 888;
+            background-color: transparent;
+        }
+    
+    
     }

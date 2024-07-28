@@ -8,6 +8,7 @@ const Cont=styled.div`
     left: 50%;
     top: 50%;
     flex-direction: column;
+    cursor: default;
     gap: 20px ;
 `
 const IMG=styled.img`

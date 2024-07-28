@@ -3,15 +3,19 @@ import styled from "styled-components";
 const Container = styled.div`
 margin-top: 20px;
 display: flex;
-flex-direction: column;
 justify-content: center;
+align-items: center;
 max-width: 1240px;
-padding: 0 130px;
 width: 100%;
-margin: auto;
+padding: 0 ;
+/* margin: auto; */
 background-color: transparent;
-height: 649px;
 z-index: 1;
+@media only screen and (max-width: 578px) {
+    /* max-width: 400px; */
+    width: 100%;
+    padding: 0 30px;
+}
 `
 const BlackWrapper=styled.div`
 color: white;
@@ -25,6 +29,7 @@ const WrCont = styled.img`
 const HomeWrapper = styled.div`
 z-index: 5 !important;
 position: relative;
+width: 100%;
 background-color: transparent;
 `
 const Img = styled.img`
@@ -37,6 +42,10 @@ z-index: 888;
  background-color: transparent;
  /* border: 10px solid white; */
  border-radius: 50%;
+ @media only screen and (max-width: 578px) {
+ display: none;
+ 
+ }
 `
 const H1 = styled.h1`
 color: #E3E3E3;
@@ -46,11 +55,15 @@ text-align: start;
 background-color: transparent;
 z-index: 6;
 position: relative;
+@media only screen and (max-width: 578px) {
+    font-size: 30px;
+}
 `
 const UniversTxt = styled.div`
 color: white;
-width: 700px;
+/* max-width: 700px; */
 background-color: transparent;
+width: 100%;
 padding:  50px 0;
 `
 const BackgroundVideoWr = styled.div`
