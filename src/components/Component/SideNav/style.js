@@ -13,12 +13,13 @@ const SideNavWr=styled.div`
   width: 240px;
   flex-direction: column;
   padding-right: 12px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 100px);
   overflow: hidden;
   position: sticky;
-  top: 60px;
+  top: 100px;
   transition: overflow-y 0.3s linear;
-  background-color: #000;
+  padding-top: 30px;
+  padding-bottom: 30px;
   :hover {
     overflow-y: scroll;
     transition: overflow-y 0.3s linear;

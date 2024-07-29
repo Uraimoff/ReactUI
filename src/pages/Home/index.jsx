@@ -1,15 +1,13 @@
-import React  from 'react'
+import React from "react";
 // import { useNavigate } from 'react-router-dom'
-import Homec from '../../components/Homec'
-
+import Homec from "../../components/Homec";
 
 const Home = () => {
   return (
     <>
-
-    <Homec/>
+      <Homec />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

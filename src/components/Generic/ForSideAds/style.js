@@ -8,7 +8,9 @@ position: absolute;
 display: flex;
 flex-direction: column;
 gap: 20px;
-
+@media only screen and (max-width: 1024px) {
+  display: none;
+}
 `
 const AdsWrapper = styled.div`
   border-radius: 10px;

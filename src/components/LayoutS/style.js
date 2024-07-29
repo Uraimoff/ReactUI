@@ -3,13 +3,26 @@ import styled from "styled-components";
 const LayoutWr = styled.div`
   display: flex;
   gap: 50px;
+  width: 100%;
 `;
+const ContentWrapper=styled.div`
+background-color: red !important;
+  width: 75%;
+@media only screen and (max-width: 1024px) {
+  width: 100%;
+  margin-right: 60px;
+}
+`
+const PlaceBar = styled.div`
+width: 22%;
+`
 const SideNavW = styled.div`
-  /* position: fixed;
-top: 100px;
+  position: fixed;
+top: 0px;
 left: 0;
 overflow-y: auto;
-height: 100%;*/
+height: 100%;
+
 /* overflow: hidden; */
 
 /* background-color: #0f0f0f; */
@@ -25,19 +38,24 @@ height: 100%;*/
     transition: overflow-y 0.3s linear;
   } */
   `;
+const Adswrap = styled.div`
+  position: fixed;
+  right: 0;
+`
 const ChildrenWr = styled.div`
 /* overflow-y: scroll;
 transition: overflow-y 0.3s linear; */
-  /* position: sticky;
+  /* position: fixed;
   top: 100px;
   z-index: 666;
   left: 700px;
   width: 100%; */
   /* height: 100%; */
-
-  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  /* height: calc(100vh - 60px); */
   overflow-y: auto;
-  background-color: #000;
+  background-color: green;
 `;
 
-export { LayoutWr, SideNavW, ChildrenWr, };
+export { LayoutWr, SideNavW,ContentWrapper,Adswrap, PlaceBar,ChildrenWr, };

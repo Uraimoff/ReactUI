@@ -23,7 +23,7 @@ import {
   Wrapper,
   ResultItem,
 } from "./style";
-import BurgerMenu from "../BurgerMenu";
+import BurgerMenu from "./BurgerMenu";
 
 const Navbar = () => {
   const location = useLocation();

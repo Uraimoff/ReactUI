@@ -1,11 +1,7 @@
 import React from "react";
-import ForSideAds from "../ForSideAds";
-import SideNav from "../SideNav";
-import {
-  ChildrenWr,
-  LayoutWr,
-  SideNavW,
-} from "./style";
+import ForSideAds from "../Generic/ForSideAds";
+import SideNav from "./../Component/SideNav";
+import { Adswrap, ChildrenWr, ContentWrapper, LayoutWr, PlaceBar, SideNavW } from "./style";
 
 const LaoyoutS = ({ children }) => {
   return (
@@ -13,9 +9,22 @@ const LaoyoutS = ({ children }) => {
       <SideNavW>
         <SideNav />
       </SideNavW>
+      <PlaceBar></PlaceBar>
       <ChildrenWr>
-      <ForSideAds/>
-        {children}</ChildrenWr>
+        <ContentWrapper>
+        {children} 
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        </ContentWrapper>
+        <div></div>
+        <Adswrap >
+        <ForSideAds />
+        </Adswrap>
+      </ChildrenWr>
     </LayoutWr>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import ComponentTable from '../../ComponentTable'
+import ComponentTable from '../../Generic/ComponentTable'
 import axios from 'axios'
-import NoData from '../../NoData'
+import NoData from '../../Generic/NoData'
 import { Nodat } from '../Inputs/style'
 
 const Buttons = () => {
@@ -30,9 +30,7 @@ console.log(button, 'user malumot');
         )}
     </div>
     :
-    <Nodat>
-    <NoData/>
-  </Nodat>
+    undefined
 }
   </>
   )

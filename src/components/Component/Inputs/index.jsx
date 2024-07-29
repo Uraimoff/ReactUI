@@ -6,10 +6,7 @@ import React from 'react'
 const Inputs = () => {
   return (
     <div style={{color: "white"}}>Inputs Coming Soon...
-  {/* <PasswordToggle/> */}
-    {/* <Nodat>
-    <NoData/>
-    </Nodat> */}
+ 
     </div>
   )
 }

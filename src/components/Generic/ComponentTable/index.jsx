@@ -41,13 +41,13 @@ export default ComponentTable
 
   return (
     <ComponentTableWr>
-      {Content}
+      {Content || 'Conent'}
       <Description>
-        <Position>{Title}</Position>
-        {Descriptions}
+        <Position>{Title || "title"}</Position>
+        {Descriptions || 'Description'}
       </Description>
       <SyntaxHighlighter language="javascript" style={irBlack}>
-       { code.length <= 10 ?  codeString : code}
+       {   codeString ||  code}
       </SyntaxHighlighter>
     </ComponentTableWr>
   );

@@ -1,23 +1,19 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import ForSideAds from "../ForSideAds";
-import SideNav from "../SideNav";
-import { BigWr, ComponentWr } from "./style";
-import NoData from "../NoData";
+import ForSideAds from "../Generic/ForSideAds";
+import SideNav from "./SideNav";
+import { ChildrenWr, LayoutWr, SideNavW } from "./style";
 
-const Component = () => {
-  const location = useLocation();
-  console.log(location.pathname, "location");
+const Component = ({ children }) => {
   return (
-    <>
-      <BigWr>
-        <ComponentWr style={{ color: "white " }}>
-          <SideNav />
-          <NoData/>
-        </ComponentWr>
+    <LayoutWr>
+      <SideNavW>
+        <SideNav />
+      </SideNavW>
+      <ChildrenWr>
         <ForSideAds />
-      </BigWr>
-    </>
+        {children}
+      </ChildrenWr>
+    </LayoutWr>
   );
 };
 

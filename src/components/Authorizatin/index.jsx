@@ -1,5 +1,5 @@
 import React from "react";
-import Access from "../Access";
+import Access from "./Access";
 import {  H1, Img } from "../Homec/styled";
 // import whiteFbi from './../../assets/img/whiteFbi.png'
 import react from './../../assets/svg/react.svg'

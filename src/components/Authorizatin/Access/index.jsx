@@ -1,6 +1,6 @@
 import React, {  useState } from "react";
 import { AccessP, Button, Input, Positioner } from "./style";
-import { obj } from "../mock/data";
+import { obj } from "../../mock/data";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 

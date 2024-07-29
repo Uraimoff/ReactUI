@@ -1,5 +1,5 @@
 import React from 'react'
-import NoData from '../../components/NoData'
+import NoData from '../../components/Generic/NoData'
 
 const Guide = () => {
   return (

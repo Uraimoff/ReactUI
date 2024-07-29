@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { navbar } from "../../utils/navbar";
+import { navbar } from "../../../utils/navbar";
 import { SideNavItem, SideNavWr } from "./style";
 
 const SideNav = () => {

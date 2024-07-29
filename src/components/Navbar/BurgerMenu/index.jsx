@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Burger, BurgerWr, Dropdown, Items, Outimg } from "./style";
-import burgermenu from "./../../assets/svg/burgermenu.svg";
-import close from "./../../assets/svg/close.svg";
+import burgermenu from "./../../../assets/svg/burgermenu.svg";
+import close from "./../../../assets/svg/close.svg";
 import { Link } from "react-router-dom";
-import { navbar } from "../../utils/navbar";
+import { navbar } from "../../../utils/navbar";
 
 const BurgerMenu = () => {
   const [active, setActive] = useState(false);
