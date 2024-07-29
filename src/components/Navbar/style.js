@@ -184,7 +184,7 @@ line-height: 20px;
 }
 `
 const OutWr= styled.div`
-padding-top: 100px;
+padding-top: ${(props) => (props.noPadding ? '0' : '100px')};
 `
 
 const Input= styled.input`

@@ -9,4 +9,7 @@ display: flex;
     position: fixed;
     z-index: 999;
 `
-export {ComponentWr, ASD}
+const BigWr=styled.div`
+    display: flex;
+`
+export {ComponentWr,BigWr, ASD}

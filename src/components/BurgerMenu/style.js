@@ -25,14 +25,20 @@ overflow: hidden;
 position: absolute;
 right: -130px;
 height: 100vh;
-top: 50px;
-background-color: transparent;
+top: 33px;
+display: none;
+background-color: rgba(128, 128, 128, 0.3);
 /* opacity: 0.5; */
-backdrop-filter: blur(8px);
-background: red;
+backdrop-filter: blur(8px)!important;
+-webkit-backdrop-filter: blur(8px) !important;
 opacity: ${(props) => (props.isActive ? 1 : 0)};
 transition: all 0.5s ease;
 width: ${(props) => (props.isActive ? "400px" : "0")};
+@media only screen and (max-width: 1024px) {
+    display: block;
+    top: 48.7px;
+
+}
 @media only screen and (max-width: 578px) {
     width: ${(props) => (props.isActive ? "280px" : "0")};
     right: -30px!important;
@@ -45,6 +51,6 @@ width: ${(props) => (props.isActive ? "400px" : "0")};
 const Items= styled.li`
     padding: 10px 30px;
     font-size: 18px;
-    background: #292A2D;
+    background: transparent;
 `
 export {Burger,Dropdown,Items,BurgerWr, Outimg}

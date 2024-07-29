@@ -201,7 +201,7 @@ const Navbar = () => {
             </Section>
           </Wrapper>
         </Main>
-        <OutWr>
+        <OutWr noPadding={location.pathname === "/home"}>
           {location.pathname === asdas ? (
             <LaoyoutS>
               <Outlet />

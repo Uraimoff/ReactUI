@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-margin-top: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
 max-width: 1240px;
 width: 100%;
+height: 100vh;
 margin: 0 auto;
 background-color: transparent;
 z-index: 1;

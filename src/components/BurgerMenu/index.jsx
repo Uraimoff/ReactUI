@@ -22,14 +22,14 @@ const BurgerMenu = () => {
           {navbar.map(
             (value, index) =>
               !value.component &&
-              !value.hidden && (
-                <Items key={index}>
-                  <Link to={value.path} onClick={() => setActive(false)}>
+            !value.hidden && (
+              <Items key={index}>
+                  <Link style={{background: 'transparent', color: 'white', textDecoration: 'none'}} to={value.path} onClick={() => setActive(false)}>
                     {value.title}
                   </Link>
                 </Items>
               )
-          )}
+            )}
         </Dropdown>
       </BurgerWr>
     </>
