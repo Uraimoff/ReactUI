@@ -5,6 +5,7 @@ import LaoyoutS from "../LayoutS";
 import react from "./../../assets/svg/react.svg";
 import logout from "./../../assets/svg/logout.svg";
 
+
 import {
   Container,
   H3,
@@ -146,6 +147,7 @@ const Navbar = () => {
         <Main>
           <Opacity></Opacity>
           <Wrapper>
+
             <Section onClick={() => navigate("./home")}>
               <Logo src={react} />
               <H3>React Component</H3>

@@ -7,14 +7,17 @@ justify-content: center;
 align-items: center;
 max-width: 1240px;
 width: 100%;
-padding: 0 ;
-/* margin: auto; */
+margin: 0 auto;
 background-color: transparent;
 z-index: 1;
+@media only screen and (max-width: 1024px) {
+    padding: 0;
+}
 @media only screen and (max-width: 578px) {
-    /* max-width: 400px; */
+    max-width: 300px;
     width: 100%;
-    padding: 0 30px;
+    display: flex;
+    justify-content: center;
 }
 `
 const BlackWrapper=styled.div`
@@ -36,7 +39,7 @@ const Img = styled.img`
 padding: 10px;
 box-sizing: border-box;
 z-index: 888;
- width: 200px;
+ width: 30%;
  height: 200px;
  /* margin: auto; */
  background-color: transparent;

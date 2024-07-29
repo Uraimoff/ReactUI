@@ -1,18 +1,45 @@
 .imgWr{
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     background-color: transparent;
     width: 100%;
+    /* padding: 0 60px; */
 }
 .wr{
-    width: 100%;
+    width: 70%;
 
     /* align-items: center; */
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
     background-color: transparent;
+}
+@media only screen and (max-width: 1024px) {
+
+    .imgWr{
+        padding: 0 60px;
+    }
+}
+@media only screen and (max-width: 768px) {
+
+    .imgWr{
+        padding: 0 60px;
+    }
+}
+@media only screen and (max-width: 578px) {
+    .wr{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .imgWr{
+        padding: 0 30px;
+    }
+    .wr{
+        width: 100%;
+    }
+
 }
 #myVideo {
     opacity: 0.5;

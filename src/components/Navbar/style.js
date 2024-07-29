@@ -42,16 +42,21 @@ position: relative;
 const Wrapper=styled.div`
 background-color: transparent;
 color: white;
-padding: 0 130px;
-max-width: 1440px;
+max-width: 1240px;
 min-width: 0;
 height: 64px;
 z-index: 999;
 display: flex;
 align-items: center;
 width: 100%;
+padding: 0 60px;
+margin: 0 auto;
 justify-content: space-between;
+@media only screen and (max-width: 1024px) {
+    max-width: 964px;
+}
 @media only screen and (max-width: 768px) {
+    max-width: 700px;
     margin: 0 !important;
     display: flex;
     justify-content: space-between;
