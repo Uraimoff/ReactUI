@@ -32,8 +32,9 @@ backdrop-filter: blur(8px);
 background: red;
 opacity: ${(props) => (props.isActive ? 1 : 0)};
 transition: all 0.5s ease;
-width: ${(props) => (props.isActive ? "500px" : "0")};
+width: ${(props) => (props.isActive ? "400px" : "0")};
 @media only screen and (max-width: 578px) {
+    width: ${(props) => (props.isActive ? "280px" : "0")};
     right: -30px!important;
     
 }
