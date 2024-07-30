@@ -11,6 +11,7 @@ display: none;
     display: block;
     height: 30px;
     width: 30px;
+    margin-left: 10px;
     border: gray 1px solid;
     border-radius: 5px;
     padding: 5px;
@@ -28,16 +29,16 @@ right: -130px;
 height: 100vh;
 top: 33px;
 display: none;
-background-color: rgba(128, 128, 128, 0.3);
+background-color: rgba(0, 0, 0, 0.5);
 /* opacity: 0.5; */
-backdrop-filter: blur(8px)!important;
--webkit-backdrop-filter: blur(8px) !important;
+/* background: #808080; */
+backdrop-filter: blur(8px);
 opacity: ${(props) => (props.isActive ? 1 : 0)};
 transition: all 0.5s ease;
 width: ${(props) => (props.isActive ? "400px" : "0")};
 @media only screen and (max-width: 1024px) {
     display: block;
-    top: 48.7px;
+    top: 47.8px;
 
 }
 @media only screen and (max-width: 578px) {

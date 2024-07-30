@@ -14,7 +14,7 @@ z-index: 1;
     padding: 0;
 }
 @media only screen and (max-width: 578px) {
-    max-width: 300px;
+    /* max-width: 300px; */
     width: 100%;
     display: flex;
     justify-content: center;
