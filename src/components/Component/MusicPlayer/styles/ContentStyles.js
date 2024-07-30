@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
   padding: 20px;
-  margin-top: 60px; /* Ensure there's space for a fixed navbar */
+  /* margin-top: 60px;  */
   text-align: center;
 `;
 

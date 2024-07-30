@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ComponentTable from '../../Generic/ComponentTable'
 import axios from 'axios'
-import NoData from '../../Generic/NoData'
-import { Nodat } from '../Inputs/style'
 
 const Buttons = () => {
   const [button, setButton]= useState(null)

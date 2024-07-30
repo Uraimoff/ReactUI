@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { MusicPlWr,  Battery, Span, Img, FlashWr } from "./style";
 // import MusicPlayerIMG from "./../../../assets/img/MusicPlayerUI.jpeg";
 import flash from './../../../assets/svg/flash.svg'
-import GlobalStyles from './styles/GlobalStyles';
 
 import Content from './components/Content';
 import Player from './components/Player';
@@ -36,7 +35,6 @@ const MusicPlayer = () => {
   console.log(batteryLevel, "bu nima boldi");
   return (
     <MusicPlWr>
-      <GlobalStyles />
       <Content />
       <Player />
       <div color="white">

@@ -3,14 +3,14 @@ import styled from "styled-components";
 const BurgerWr=styled.div`
 position: relative;
 background: transparent;
-margin-left: 10px;
 `
 const Burger=styled.div`
-height: 20px;
+height: 30px;
 display: none;
 @media only screen and (max-width: 1200px) {
     display: block;
-    height: 20px;
+    height: 30px;
+    width: 30px;
     border: gray 1px solid;
     border-radius: 5px;
     padding: 5px;
@@ -19,7 +19,7 @@ display: none;
 `
 const Outimg = styled.img`
 background: transparent;
-height: 20px;
+height: 100%;
 `
 const Dropdown=styled.ul`
 overflow: hidden;
