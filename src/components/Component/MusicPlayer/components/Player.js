@@ -2,7 +2,6 @@ import React from 'react';
 import { PlayerWrapper, Controls, TrackInfo, ProgressBar, TimeInfo } from '../styles/PlayerStyles';
 import { usePlayer } from './../../contexts/PlayerContext';
 
-
 const Player = () => {
   const { currentTrackIndex, tracks, isPlaying, currentTime, duration, togglePlayPause, nextTrack, prevTrack, audioRef } = usePlayer();
 

@@ -42,8 +42,12 @@ const PlayerProvider = ({ children }) => {
   useEffect(() => {
     const fetchTracks = async () => {
       try {
-        const response = await axios.get('https://osdb.confidence.sh/tracks'); // Replace with the actual API endpoint
-        setTracks(response.data);
+        const response = await axios.get('https://osdb.confidence.sh/tracks', {
+          headers: {
+            'Authorization': 'Bearer hKA3WnSrhOtIaDoN2wCvb'
+          }
+        });
+        setTracks(response.data.tracks);
       } catch (error) {
         console.error('Error fetching tracks:', error);
       }
