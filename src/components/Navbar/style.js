@@ -243,6 +243,7 @@ const Burger=styled.div`
 height: 20px;
 display: none;
 @media only screen and (max-width: 860px) {
+    /* margin-left: 10px; */
     display: block;
     height: 20px;
     border: gray 1px solid;

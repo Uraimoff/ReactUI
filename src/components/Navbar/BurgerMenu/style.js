@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BurgerWr=styled.div`
 position: relative;
 background: transparent;
+margin-left: 10px;
 `
 const Burger=styled.div`
 height: 20px;
