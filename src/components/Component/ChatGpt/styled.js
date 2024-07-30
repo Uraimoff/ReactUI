@@ -1,70 +1,71 @@
 import styled from "styled-components";
 
+const ChatQuestion = styled.div`
+  background-color: ${(props) => (props.className === 'ai' ? '#444654' : 'inherit')};
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+`;
+
 const ChatContainer = styled.div`
-  /* width: 100%; */
-  /* border: 1px red solid; */
-  height: 100%;
-  width: 800px;
-  max-width: 800px;
-  /* background: red; */
-  border-radius: 10px;
-  padding: 16px;
-  background-color: #343541;
-  font-family: "Montserrat";
-  padding-bottom: 150px;
-  overflow-y: scroll;
-  `;
-const ChatWrapper = styled.div`
-max-width: 800px;
-width: 100%;
-background: inherit;
-display: flex;
-flex-direction: column;
-/* padding-bottom: 150px; */
-/* overflow-y: scroll; */
-
-`;
-const ChatQuestion= styled.div`
-background: inherit;
-padding: 20px
-`;
-const ChatAnswer= styled.div`
-background: #444654;
-padding: 20px
-`;
-const InputWrapper = styled.div`
-  /* border: 1px solid green; */
-  position: fixed;
-  bottom: 50px;
-  width: 100%;
-  left: 302px;
-  max-width: 832px;
   display: flex;
-  height: 47px;
-  padding: 5px 5px;  
-  background: #40414E;
-  border-radius: 4px;
-  box-sizing: border-box;
-  /* overflow: hidden; */
-`;
-const Input = styled.input`
-  border: none;
-  /* height: px; */
-  background-color: inherit;
-  font-size: 15px;
-  font-family: inherit;
-  max-width: calc(calc(100% - 80px));
-  outline: none;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
   width: 100%;
-`;
-const Button = styled.button`
-  border: none;
-  position: absolute;
-  top: 16px;
-  /* height: 47px; */
-  right: 20px;
-  background: #40414E;
-  
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  align-items: center; /* Ensures all children are centered */
 `;
 
-export { ChatContainer, ChatWrapper, InputWrapper, Input, Button, ChatQuestion, ChatAnswer};
+const ChatWrapper = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Provide some space between chat and input */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Adjust based on your design */
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #2c2c2e;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  width: calc(100% - 40px); /* Full width minus padding */
+  max-width: 600px; /* Same as ChatWrapper */
+  box-sizing: border-box; /* Include padding in width calculation */
+`;
+
+const StyledInput = styled.input`
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+`;
+
+const StyledButton = styled.button`
+  background-color: #3d3d3d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #575757;
+  }
+`;
+
+export {StyledButton,StyledInput,InputWrapper, ChatWrapper, ChatContainer, ChatQuestion}

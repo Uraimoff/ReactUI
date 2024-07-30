@@ -17,9 +17,9 @@ const SideNavWr=styled.div`
   overflow: hidden;
   position: sticky;
   top: 100px;
-  transition: overflow-y 0.3s linear;
   padding-top: 30px;
   padding-bottom: 30px;
+  transition: overflow-y 0.3s linear;
   :hover {
     overflow-y: scroll;
     transition: overflow-y 0.3s linear;
