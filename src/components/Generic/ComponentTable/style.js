@@ -6,6 +6,8 @@ const ComponentTableWr = styled.div`
   /* background: red; */
   border-radius: 10px;
   padding: 16px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border: 1px solid #283543;
   background-color: transparent;
 font-family: "Montserrat";

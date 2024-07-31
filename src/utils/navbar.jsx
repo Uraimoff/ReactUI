@@ -137,14 +137,6 @@ export const navbar = [
     hidden: false,
     component: true,
   },
-  {
-    element: <Dropdown/>,
-    title: "1Dropdown",
-    path: "/dropdown",
-    private: false,
-    hidden: false,
-    component: true,
-  },
 ];
 
 export const componentChildren = [

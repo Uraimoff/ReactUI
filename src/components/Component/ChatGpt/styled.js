@@ -15,7 +15,7 @@ const ChatContainer = styled.div`
   background-color: black;
   width: 100%;
   height: 100vh;
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
   align-items: center; /* Ensures all children are centered */
 `;
@@ -28,7 +28,7 @@ const ChatWrapper = styled.div`
   border-radius: 10px;
   margin-bottom: 20px; /* Provide some space between chat and input */
   width: 100%; /* Full width */
-  max-width: 600px; /* Adjust based on your design */
+  max-width: 900px; /* Adjust based on your design */
 `;
 
 const InputWrapper = styled.div`
@@ -40,8 +40,17 @@ const InputWrapper = styled.div`
   position: fixed;
   bottom: 20px;
   width: calc(100% - 40px); /* Full width minus padding */
-  max-width: 600px; /* Same as ChatWrapper */
+  max-width: 900px; /* Same as ChatWrapper */
   box-sizing: border-box; /* Include padding in width calculation */
+  @media only screen and (max-width: 1024px){
+    max-width: 60%;
+  }
+  @media only screen and (max-width: 768px){
+    max-width: 85%;
+  }
+  @media only screen and (max-width: 383px){
+
+  }
 `;
 
 const StyledInput = styled.input`
@@ -62,7 +71,11 @@ const StyledButton = styled.button`
   margin-left: 10px;
   border-radius: 5px;
   cursor: pointer;
-
+  @media only screen and (max-width: 383px){
+    margin-left: -60px;
+  }
+    
+  
   &:hover {
     background-color: #575757;
   }

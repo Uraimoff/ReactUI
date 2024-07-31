@@ -1,4 +1,4 @@
-    import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container=styled.div`
@@ -252,4 +252,5 @@ display: none;
     background: transparent;
 }
 `
+
 export {Container,Wrapper,Burger,Input,Span,ResultItem,Results,DropdownWr,Opacity,OutWr,Outimg, DropdownMenu, Section, Logo, Link, H3, Main, Main2, Nav, PhoneNavbar, LoginButton, LoginIcon}

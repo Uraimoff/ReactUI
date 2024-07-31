@@ -1,16 +1,16 @@
 import React from "react";
 import ForSideAds from "../Generic/ForSideAds";
 import SideNav from "../Component/SideNav";
-import { Adswrap, ChildrenWr, ContentWrapper, LayoutWr, PlaceBar, SideNavW } from "./style";
+import { ContentWrapper,  PlaceBar,  } from "./style";
 
 const LaoyoutS = ({ children }) => {
   return (
-    <LayoutWr>
-      <SideNavW>
+    <div className="flex gap-12 w-full">
+      <div className="fixed top-0 hidden lg:block left-0 h-full">
         <SideNav />
-      </SideNavW>
+      </div>
       <PlaceBar></PlaceBar>
-      <ChildrenWr>
+      <div className="w-full flex">
         <ContentWrapper>
           
           {children} 
@@ -74,11 +74,11 @@ const LaoyoutS = ({ children }) => {
           <div>hello</div>
           <div>hello last</div>
         </ContentWrapper>
-        <Adswrap>
+        <div className="xl:block hidden fixed right-0">
           <ForSideAds />
-        </Adswrap>
-      </ChildrenWr>
-    </LayoutWr>
+        </div>
+      </div>
+    </div>
   );
 };
 

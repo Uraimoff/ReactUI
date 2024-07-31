@@ -24,6 +24,7 @@ import {
   ResultItem,
 } from "./style";
 import BurgerMenu from "./BurgerMenu";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const location = useLocation();
@@ -196,6 +197,7 @@ const Navbar = () => {
                 <Outimg src={logout} alt="" />
                 Logout
               </Link>
+              <ThemeToggle />
               <BurgerMenu></BurgerMenu>
               
             </Section>

@@ -1,19 +1,18 @@
 import React from "react";
 import ForSideAds from "../Generic/ForSideAds";
 import SideNav from "./SideNav";
-import { ChildrenWr, LayoutWr, SideNavW } from "./style";
 
 const Component = ({ children }) => {
   return (
-    <LayoutWr>
-      <SideNavW>
+    <div className="flex gap-12">
+      <div className="relative">
         <SideNav />
-      </SideNavW>
-      <ChildrenWr>
+      </div>
+      <div className="flex-1 h-[calc(100vh-60px)] overflow-y-auto bg-black">
         <ForSideAds />
         {children}
-      </ChildrenWr>
-    </LayoutWr>
+      </div>
+    </div>
   );
 };
 

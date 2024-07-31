@@ -73,7 +73,7 @@ const ChatGpt = () => {
       <ChatWrapper>
         {chat.map((value, index) => (
           <ChatQuestion key={index} className={value.type}>
-            <span>{value.type === 'ai' ? 'Bot:' : 'Me:'}</span>
+            <span style={{paddingRight: '5px', backgroundColor: 'transparent'}}>{value.type === 'ai' ? 'Bot:' : 'Me:'}</span>
             {typeof value.message === 'object' ? JSON.stringify(value.message) : value.message}
           </ChatQuestion>
         ))}
