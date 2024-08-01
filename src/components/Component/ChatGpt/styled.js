@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 const ChatQuestion = styled.div`
-  background-color: ${(props) => (props.className === 'ai' ? '#444654' : 'inherit')};
-  color: white;
+  background-color: ${(props) => {
+    if(props.theme==='light'){
+      return props.className === 'ai' ? '#E5E7EB' : 'inherit'
+    } else{
+    return props.className === 'ai' ? '#444654' : 'inherit';
+  }}};
+  /* color: ${(props)=>(props.theme==='light'?'black':'white' )} ; */
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -12,7 +17,7 @@ const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: black;
+  background-color: transparent;
   width: 100%;
   height: 100vh;
   /* padding: 20px; */
@@ -24,7 +29,7 @@ const ChatWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color:${(props)=>(props.theme==='light'?'#F9FAFB':'#1a1a1a' )} ;
   border-radius: 10px;
   margin-bottom: 20px; /* Provide some space between chat and input */
   width: 100%; /* Full width */
@@ -34,7 +39,7 @@ const ChatWrapper = styled.div`
 const InputWrapper = styled.div`
   display: flex;
   align-items: center;
-  background-color: #2c2c2e;
+  background-color: ${(props)=>(props.theme==='light'?'#E5E7EB':'#2c2c2e' )} ;
   border-radius: 10px;
   padding: 10px;
   position: fixed;
@@ -57,14 +62,14 @@ const StyledInput = styled.input`
   flex: 1;
   background-color: transparent;
   border: none;
-  color: white;
+  
   padding: 10px;
   outline: none;
   font-size: 16px;
 `;
 
 const StyledButton = styled.button`
-  background-color: #3d3d3d;
+  background-color: ${(props)=>(props.theme==='light'?'#4B5563':'#3d3d3d' )}  ;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -77,7 +82,7 @@ const StyledButton = styled.button`
     
   
   &:hover {
-    background-color: #575757;
+    background-color: #374151;
   }
 `;
 

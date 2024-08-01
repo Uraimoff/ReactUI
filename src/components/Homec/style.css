@@ -4,6 +4,7 @@
     justify-content: center;
     background-color: transparent;
     width: 100%;
+    margin-top: 50px;
     /* padding: 0 60px; */
 }
 .wr{
@@ -42,7 +43,7 @@
 
 }
 #myVideo {
-    opacity: 0.5;
+    opacity: 1;
       position: fixed;
       right: 0;
       bottom: 0;

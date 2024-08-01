@@ -5,6 +5,7 @@ const Cont=styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
+    background-color: transparent;
     left: 50%;
     top: 50%;
     flex-direction: column;

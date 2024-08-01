@@ -11,7 +11,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 body.dark {
-  --background-color: #333333;
+  --background-color: #000;
   --text-color: #ffffff;
 }
 [data-theme="light"] {
@@ -34,7 +34,6 @@ code {
 }
 :root{
   --Primary-color: #03274b;
-    --background-color: black;
   --text-color: white;
   --input-border: gray;
   --result-item-bg: #262626;
@@ -42,7 +41,7 @@ code {
 }
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: #0f0f0f;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,7 +53,7 @@ code {
 .body-scrollbar::-webkit-scrollbar {
   width: 8px;
   height: 7px;
-  background-color: #0f0f0f;
+  background-color: #a7a3a3;
 }
 
 .body-scrollbar::-webkit-scrollbar-thumb {

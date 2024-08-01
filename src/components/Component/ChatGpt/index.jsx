@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { ChatContainer, ChatQuestion, ChatWrapper, InputWrapper, StyledButton, StyledInput } from "./styled";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ChatGpt = () => {
   const [chat, setChat] = useState([]);
   const [value, setValue] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef(null);
-
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     console.log("API Key:", process.env.REACT_APP_OPENAI_API_KEY); // Debug log to check API key
 
@@ -70,15 +71,15 @@ const ChatGpt = () => {
 
   return (
     <ChatContainer>
-      <ChatWrapper>
+      <ChatWrapper theme={theme}>
         {chat.map((value, index) => (
-          <ChatQuestion key={index} className={value.type}>
+          <ChatQuestion theme={theme} key={index} className={value.type}>
             <span style={{paddingRight: '5px', backgroundColor: 'transparent'}}>{value.type === 'ai' ? 'Bot:' : 'Me:'}</span>
             {typeof value.message === 'object' ? JSON.stringify(value.message) : value.message}
           </ChatQuestion>
         ))}
       </ChatWrapper>
-      <InputWrapper>
+      <InputWrapper theme={theme}>
         <StyledInput
           ref={inputRef}
           placeholder="Ask whatever you want"
@@ -89,7 +90,7 @@ const ChatGpt = () => {
           onFocus={() => setIsInputFocused(true)}
           onBlur={() => setIsInputFocused(false)}
         />
-        <StyledButton onClick={handleClick}>
+        <StyledButton theme={theme} onClick={handleClick}>
           {value || isInputFocused ? "Send" : "CTRL+M"}
         </StyledButton>
       </InputWrapper>

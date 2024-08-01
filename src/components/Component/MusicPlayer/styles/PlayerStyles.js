@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const PlayerWrapper = styled.div`
   width: 100%;
-  background-color: #181818;
+  background-color: ${(props)=>(props.theme==='light'?'#E5E7EB':'#181818' )};
   display: flex;
   justify-content: space-between;
   align-items: center;

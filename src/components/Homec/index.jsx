@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BackgroundVideoWr,
   BlackWrapper,
@@ -12,26 +12,29 @@ import "./style.css";
 import videoBg from "./../../assets/video/videoBg.mp4";
 import react from "./../../assets/svg/react.svg";
 import { Buttons } from "../Generic";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../Component/contexts/ThemeContext";
 
 const Homec = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { theme } = useContext(ThemeContext);
+
+    // checks if current location is home 
+  const isHome = location.pathname === '/home'
   return (
     <>
       <BackgroundVideoWr>
         <video id="myVideo" autoPlay loop muted src={videoBg} />
       </BackgroundVideoWr>
-      <HomeWrapper>
+      <HomeWrapper theme={theme} isHome={isHome}>
         
-        <Container>
-          <div className="imgWr">
+        <Container >
+          <div className="imgWr ">
             <div className="wr">
               <H1>React Component</H1>
               <UniversTxt>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
-                libero officiis hic sequi magni explicabo velit magnam inventore
-                pariatur ex! Enim tempora nisi a nihil facilis inventore
-                similique dolores odit.
+              We're thrilled to have you here! Our mission is to empower developers by providing a comprehensive library of React components designed to make your development process smoother, faster, and more enjoyable. Whether you're building a simple website or a complex application, our components are crafted to help you create beautiful, responsive, and accessible user interfaces with ease.
               </UniversTxt>
               <div className="butt">
                 <Buttons
@@ -62,7 +65,7 @@ const Homec = () => {
           </div>
         </Container>
 
-        <BlackWrapper>
+        <BlackWrapper theme={theme}>
           <Container>React ❤'s you</Container>
         </BlackWrapper>
       </HomeWrapper>

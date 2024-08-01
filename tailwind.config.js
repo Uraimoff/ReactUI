@@ -9,7 +9,7 @@ module.exports = {
         lightText: '#000000',
         darkBg: '#000000',
         darkText: '#ffffff',
-        dayBackground: 'rgb(125, 125, 125, 0.5)',
+        dayBackground: 'rgb(125, 125, 125, 0.3)',
         nightBackground: 'rgb(0, 0, 0, 0.5)',
       },
     },

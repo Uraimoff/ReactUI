@@ -3,41 +3,51 @@ import styled from "styled-components";
 const LayoutWr = styled.div`
   display: flex;
   gap: 50px;
+  width: 100%;
 `;
+const ContentWrapper=styled.div`
+  width: 75%;
+  position: relative;
+
+@media only screen and (max-width: 1024px) {
+  width: 90%;
+  margin-right: 60px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 1385px){
+  width: 90%;
+}
+`
+const PlaceBar = styled.div`
+width: 22%;
+@media only screen and (max-width: 768px){
+  display: none;
+}
+@media only screen and (max-width: 1385px){
+  width: 30%;
+}
+`
 const SideNavW = styled.div`
-  /* position: fixed;
-top: 100px;
-left: 0;
-overflow-y: auto;
-height: 100%;*/
-/* overflow: hidden; */
-
-/* background-color: #0f0f0f; */
-  /* height: calc(100vh - 60px);
-  position: sticky;
-  top: 100px;
-  z-index: 777;
-  transition: overflow-y 0.3s linear;
-  width: calc(400px + 20px);
-  :hover {
-    width: 420px;
-    overflow-y: scroll;
-    transition: overflow-y 0.3s linear;
-  } */
-  `;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  @media only screen and (max-width: 768px){
+    display: none;
+  }
+    `;
+const Adswrap = styled.div`
+  position: fixed;
+  right: 0;
+  @media only screen and (max-width: 1385px){
+    display: none;
+  }
+`
 const ChildrenWr = styled.div`
-/* overflow-y: scroll;
-transition: overflow-y 0.3s linear; */
-  /* position: sticky;
-  top: 100px;
-  z-index: 666;
-  left: 700px;
-  width: 100%; */
-  /* height: 100%; */
-
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-  background-color: #000;
+  width: 100%;
+  display: flex;
 `;
 
-export { LayoutWr, SideNavW, ChildrenWr, };
+export { LayoutWr, SideNavW,ContentWrapper,Adswrap, PlaceBar,ChildrenWr, };

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Access from "./Access";
-import {  H1, Img } from "../Homec/styled";
+import {  H1,  } from "../Homec/styled";
 // import whiteFbi from './../../assets/img/whiteFbi.png'
 import react from './../../assets/svg/react.svg'
 import { Secret , Container} from "./style";
 import './style.css'
+import { ThemeContext } from "../Component/contexts/ThemeContext";
 
 const Authorizatin = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
       <Container>
-        <section>
+        <section className={theme==='light'?'daySection':'nightSection'}>
         <span></span>
         <span></span>
         <span></span>
@@ -898,14 +900,15 @@ const Authorizatin = () => {
         <span></span>
         <span></span>
         </section>
-        <div className="imgWr">
+        <div className="fixed z-40 top-20">
+        <div className="flex col justify-center">
           <div className="wrr">
-        <Img className='App-logo logo' src={react} alt='REACT'/>
-        
+        <img className='App-logo  w-[50px] h-[50px]' src={react} alt='REACT'/>
         <H1>React JS<Secret>Top secret</Secret></H1>
           </div>
         </div>
         <Access/>
+        </div>
       </Container>
     </>
   );

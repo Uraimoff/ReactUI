@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import LaoyoutS from "../LayoutS";
 import react from "./../../assets/svg/react.svg";
+import darkReact from "./../../assets/svg/darkReact.svg";
+
 import logout from "./../../assets/svg/logout.svg";
+import darkLogout from "./../../assets/svg/darkLogout.svg";
+import { ThemeContext } from "./../Component/contexts/ThemeContext"; // Adjust the path as needed
 
 
 import {
@@ -31,11 +35,34 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
   const token = localStorage.getItem("token");
   const [query, setQuery] = useState("");
   const [results, setResults] = useState(navbar);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef(null);
+  const { theme } = useContext(ThemeContext);
+
+  // this fuction created for only homepage if you scroll after 100vh it will change its theme to theme mode
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the scroll position is greater than 100vh
+      if (window.scrollY > window.innerHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -86,6 +113,8 @@ const Navbar = () => {
     setResults(filteredResults);
     setSelectedIndex(-1);
   };
+      // checks if current location is home 
+  const isHome = location.pathname === '/home'
 
   const handleItemClick = (path) => {
     navigate(path);
@@ -144,14 +173,14 @@ const Navbar = () => {
 
   return (
     <>
-      <Container>
+      <Container  theme={theme}>
         <Main>
           <Opacity></Opacity>
-          <Wrapper>
+          <Wrapper isHome={isHome} scrolled={scrolled} className="md:!px-[30px] lg:!px-0" theme={theme} >
 
             <Section onClick={() => navigate("./home")}>
-              <Logo src={react} />
-              <H3>React Component</H3>
+              <Logo  src={!scrolled && isHome ? react : theme === 'light' ?  darkReact : react} />
+              <H3 isHome={isHome} scrolled={scrolled} theme={theme} >React Component</H3>
             </Section>
             <Section ref={containerRef}>
             
@@ -168,6 +197,7 @@ const Navbar = () => {
               <Results show={query !== ""}>
                 {results.map((item, index) => (
                   <ResultItem
+                  theme={theme}
                   key={index}
                   selected={index === selectedIndex}
                   onMouseDown={() => handleItemClick(item.path)}
@@ -184,6 +214,8 @@ const Navbar = () => {
                     !value.component &&
                     !value.hidden && (
                       <Link
+                      isHome={isHome} scrolled={scrolled}
+                      theme={theme}
                         key={index}
                         className={({ isActive }) => isActive && "active"}
                         to={value.path}
@@ -193,11 +225,11 @@ const Navbar = () => {
                     )
                 )}
               </Nav>
-              <Link onClick={Logout}>
-                <Outimg src={logout} alt="" />
-                Logout
+              <Link theme={theme} isHome={isHome} scrolled={scrolled}  onClick={Logout}>
+                <Outimg className='block h-8 w-8 ml-2 border border-gray-500 rounded-md p-1.5 bg-transparent' src={!scrolled && isHome ? logout : theme === 'light' ? darkLogout : logout} alt="" />
+                
               </Link>
-              <ThemeToggle />
+              <ThemeToggle ishome={isHome} scroll={scrolled}/>
               <BurgerMenu></BurgerMenu>
               
             </Section>

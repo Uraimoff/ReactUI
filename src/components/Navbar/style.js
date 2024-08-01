@@ -6,10 +6,13 @@ display: flex;
 width: 100%;
 flex-direction: column;
 justify-content: center;
+transition: all 0.3s ease;
 /* background: red; */
-background-color:  black;
+background-color:  ${(props)=>(props.theme ==='light' ? 'white' : 'black')};
+color:  ${(props)=>(props.theme ==='light' ? 'black' : 'white')};
 min-width: 0;
 z-index: 999;
+
 `
 const Opacity = styled.div`
 background: #808080;
@@ -41,7 +44,14 @@ position: relative;
 `
 const Wrapper=styled.div`
 background-color: transparent;
-color: white;
+color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
+  transition: background-color 0.3s, color 0.3s;
 max-width: 1240px;
 min-width: 0;
 height: 64px;
@@ -49,7 +59,7 @@ z-index: 999;
 display: flex;
 align-items: center;
 width: 100%;
-padding: 0 60px;
+/* padding: 0 60px; */
 margin: 0 auto;
 justify-content: space-between;
 @media only screen and (max-width: 1024px) {
@@ -84,11 +94,18 @@ cursor: pointer;
 position: relative;
 `
 const H3 = styled.h3`
-color: white;
+color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
 background-color: transparent;
 margin-bottom: 0;
+
 @media only screen and (max-width: 580px) {
-display: none;
+    display: none;
 }
 `
 const Logo =styled.img`
@@ -98,7 +115,13 @@ width: 50px
 `
 
 const Link = styled(NavLink)`
-color: white;
+color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
 text-decoration:none;
 background-color:  transparent;
 height: 30px;
@@ -130,7 +153,9 @@ font-family: 'Montserrat';
 `
 const Outimg = styled.img`
 background: transparent;
-height: 20px;
+path{
+    fill: ${(props)=>(props.theme ==='light'?'#000':'#fff')};
+}
 `
 const Nav = styled.div`
 display: flex;
@@ -220,7 +245,6 @@ const Results = styled.ul`
   padding: 0;
   margin: 0;
   position: absolute;
-  background-color: transparent;
   top: 40px;
   border-radius: 10px;
   overflow: hidden;
@@ -233,9 +257,22 @@ box-shadow: -2px 1px 8px 0px rgba(34, 60, 80, 0.2);
 `
 const ResultItem = styled.li`
   padding: 10px;
-  background: ${(props) => (props.selected ? '#808080' : '#262626')};
+  color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
+  background: ${(props) => {
+    if (props.selected) {
+      return props.theme === 'light' ? '#D8D8D0' : '#808080';
+    } else {
+      return props.theme === 'light' ? '#fff' : '#262626';
+    }
+  }};
   &:hover{
-    background: #808080;
+    background: ${(props)=>(props.theme === 'light' ? '#D8D8D0' : '#808080')};
   }
   ;
 `

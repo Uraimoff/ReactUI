@@ -21,8 +21,8 @@ z-index: 1;
 }
 `
 const BlackWrapper=styled.div`
-color: white;
-background: #000;
+background: ${(props)=>(props.theme==='light'?'white':'black')};
+color: ${(props)=>(props.theme==='light'?'black':'white')};
 z-index: 2;
 position: relative;
 `
@@ -33,7 +33,7 @@ const HomeWrapper = styled.div`
 z-index: 5 !important;
 position: relative;
 width: 100%;
-background-color: transparent;
+background-color: rgb(0,0,0, 0.3);
 `
 const Img = styled.img`
 padding: 10px;

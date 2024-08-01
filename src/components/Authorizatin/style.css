@@ -17,6 +17,13 @@ section{
     overflow: hidden;
     /* background-color: red; */
 }
+.day-mode {
+    background-color: #ffffff; /* Background color for day mode */
+  }
+  
+  .night-mode {
+    background-color: #181818; /* Background color for night mode */
+  }
 section span{
     position: relative;
     display: block;
@@ -44,7 +51,16 @@ section span:hover{
     background-color: #0f0;
     transition: 0s;
 }
-section::before{
+
+.daySection::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,rgb(0, 138, 0),#fff);
+    animation: animate 5s linear infinite;
+}
+.nightSection::before{
     content: "";
     position: absolute;
     width: 100%;

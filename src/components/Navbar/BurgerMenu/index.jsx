@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Burger, BurgerWr, Dropdown, Items, Outimg } from "./style";
 import burgermenu from "./../../../assets/svg/burgermenu.svg";
 import close from "./../../../assets/svg/close.svg";
+import darkBurgermenu from "./../../../assets/svg/darkBurgermenu.svg";
+import darkClose from "./../../../assets/svg/darkClose.svg";
 import { Link } from "react-router-dom";
 import { navbar } from "../../../utils/navbar";
+import { ThemeContext } from "../../Component/contexts/ThemeContext";
 
 const BurgerMenu = () => {
   const [active, setActive] = useState(false);
-
+  const { theme } = useContext(ThemeContext);
   const handleClick = () => {
     setActive((current) => !current);
   };
@@ -16,7 +19,7 @@ const BurgerMenu = () => {
     <>
       <BurgerWr>
         <Burger onClick={handleClick}>
-          {!active ? <Outimg src={burgermenu} /> : <Outimg src={close} />}
+          {!active ? <Outimg src={theme==='light'? darkBurgermenu : burgermenu} /> : <Outimg src={theme==='light'? darkClose : close} />}
         </Burger>
         <Dropdown isActive={active}>
           {navbar.map(

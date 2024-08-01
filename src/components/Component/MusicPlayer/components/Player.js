@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PlayerWrapper, Controls, TrackInfo, ProgressBar, TimeInfo } from '../styles/PlayerStyles';
 import { usePlayer } from './../../contexts/PlayerContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 const Player = () => {
   const { currentTrackIndex, tracks, isPlaying, currentTime, duration, togglePlayPause, nextTrack, prevTrack, audioRef } = usePlayer();
-
+  const { theme } = useContext(ThemeContext);
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -12,7 +13,7 @@ const Player = () => {
   };
 
   return (
-    <PlayerWrapper>
+    <PlayerWrapper theme={theme}>
       {tracks.length > 0 ? (
         <TrackInfo>
           <img src="https://via.placeholder.com/50" alt="Track" />

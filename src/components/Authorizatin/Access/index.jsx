@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { obj } from "../../mock/data";
 import { useNavigate } from "react-router-dom";
-import { message } from "antd";
+import { message, } from "antd";
 import { ThemeContext } from "./../../Component/contexts/ThemeContext";
 
 const Access = () => {
@@ -25,6 +25,9 @@ const Access = () => {
   const info = () => {
     message.info("You will be redirected");
   };
+  const error = () => {
+    message.error("Please enter correct name");
+  };
 
   const onChange = ({ target: { value, name } }) => {
     setBody({
@@ -41,7 +44,7 @@ const Access = () => {
     if (e.key === "Enter") {
       let value = response
         ? `Welcome ${body.name}`
-        : `Access denied ${body.name}`;
+        : `Access denied ${body.name}` && error();
       let comparison = `Welcome ${body.name}`;
       let colr = body.name;
       setVal(value);
@@ -50,7 +53,6 @@ const Access = () => {
       if (response) {
         openMassage();
         localStorage.setItem("token", jane.token);
-        alert("You will be redirected");
         info();
         setTimeout(() => {
           navigate("/home");
@@ -62,7 +64,7 @@ const Access = () => {
   const Submit = () => {
     let value = response
       ? `Welcome ${body.name}`
-      : `Access denied ${body.name}`;
+      : `Access denied ${body.name}` && error();
     let comparison = `Welcome ${body.name}`;
     let colr = body.name;
     setVal(value);
@@ -71,7 +73,6 @@ const Access = () => {
     if (response) {
       openMassage();
       localStorage.setItem("token", jane.token);
-      alert("You will be redirected");
       info();
       setTimeout(() => {
         navigate("/home");
@@ -82,13 +83,13 @@ const Access = () => {
   return (
     <>
       <div
-        className={`flex flex-col justify-center items-center gap-7 box-border border border-green-500 rounded w-full max-w-[550px] min-w-[350px] p-8 h-[250px] my-12 text-2xl font-bold z-[888] ${
+        className={`flex flex-col  justify-center items-center gap-7  py-[10px]  box-border border border-green-500 rounded w-full max-w-[550px] min-w-[350px]   my-12 text-2xl font-bold z-[888] ${
           val === com
             ? "bg-green-500 text-black"
             : colors.length <= 1
             ? "bg-gray-900 text-black"
             : "bg-red-500 text-black"
-        } ${theme === "dark" ? "dark:bg-gray-800 dark:text-white" : ""}`}
+        } `}
       >
         {val}
         <p className="bg-transparent text-lg text-white">Enter Author's name</p>
@@ -97,8 +98,8 @@ const Access = () => {
           onKeyDown={press}
           name="name"
           type="password"
-          placeholder="****"
-          className="text-green-500 border border-green-500 p-2.5 w-[300px] box-border focus:outline-none placeholder:text-green-500 placeholder:text-lg"
+          placeholder="*******"
+          className="text-green-500 border border-green-500 p-2.5 w-[300px] box-border bg-black focus:outline-none placeholder:text-green-500 placeholder:text-lg"
         />
         <button
           onClick={Submit}
@@ -106,7 +107,7 @@ const Access = () => {
         >
           Authorize
         </button>
-        <button onClick={toggleTheme} className="mt-4 text-blue-500">
+        <button onClick={toggleTheme} className=" text-blue-500">
           Toggle {theme === "light" ? "Dark" : "Light"} Mode
         </button>
       </div>

@@ -10,9 +10,14 @@ color: red;
 width: 80px;
 background-color: transparent;
 transform: rotate(45deg);
-left: 210px;
-top: 0px;
-
+left: 200px;
+top: 10px;
+@media only screen and (max-width: 580px){
+    width: 70px;
+    font-size: 12px;
+    left: 100px;
+    top: 0px;
+}
 `
 const Container= styled.div`
     display: flex;
