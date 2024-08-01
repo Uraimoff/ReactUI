@@ -8,18 +8,18 @@ import { Link } from "react-router-dom";
 import { navbar } from "../../../utils/navbar";
 import { ThemeContext } from "../../Component/contexts/ThemeContext";
 
-const BurgerMenu = () => {
+const BurgerMenu = ({scroll, ishome}) => {
   const [active, setActive] = useState(false);
   const { theme } = useContext(ThemeContext);
   const handleClick = () => {
     setActive((current) => !current);
   };
-
+// !scrolled && isHome ? logout : theme === 'light' ? darkLogout : logout
   return (
     <>
       <BurgerWr>
         <Burger onClick={handleClick}>
-          {!active ? <Outimg src={theme==='light'? darkBurgermenu : burgermenu} /> : <Outimg src={theme==='light'? darkClose : close} />}
+          {!active ? <Outimg src={!scroll&&ishome?burgermenu:theme==='light'? darkBurgermenu : burgermenu} /> : <Outimg src={!scroll&&ishome?close:theme==='light'? darkClose : close} />}
         </Burger>
         <Dropdown isActive={active}>
           {navbar.map(

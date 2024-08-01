@@ -19,8 +19,8 @@ const ThemeToggle = ({ishome, scroll}) => {
         }
     };
     return (
-        <button onClick={toggleTheme}>
-           <img className='block h-8 w-8 ml-2 border border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent' src={iconSrc()} alt='change'/> 
+        <button  className='mr-[5px] sm:m-0' onClick={toggleTheme}>
+           <img className='block h-8 w-11 sm:w-8 ml-2 border   border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent' src={iconSrc()} alt='change'/> 
         </button>
     );
 };

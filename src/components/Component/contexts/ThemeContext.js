@@ -4,15 +4,15 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState(() => {
+        // Initialize theme state from localStorage or default to 'light'
+        return localStorage.getItem('theme') || 'light';
+    });
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        setTheme(savedTheme);
-    }, []);
-
-    useEffect(() => {
+        // Apply the theme class to the body
         document.body.className = theme;
+        // Save the theme to localStorage
         localStorage.setItem('theme', theme);
     }, [theme]);
 

@@ -4,7 +4,7 @@ import { navbar } from "../../utils/navbar";
 import LaoyoutS from "../LayoutS";
 import react from "./../../assets/svg/react.svg";
 import darkReact from "./../../assets/svg/darkReact.svg";
-
+import { message, } from "antd";
 import logout from "./../../assets/svg/logout.svg";
 import darkLogout from "./../../assets/svg/darkLogout.svg";
 import { ThemeContext } from "./../Component/contexts/ThemeContext"; // Adjust the path as needed
@@ -35,6 +35,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
+  // const [messageApi] = message.useMessage();
   const [scrolled, setScrolled] = useState(false);
   const token = localStorage.getItem("token");
   const [query, setQuery] = useState("");
@@ -43,6 +44,10 @@ const Navbar = () => {
   const containerRef = useRef(null);
   const { theme } = useContext(ThemeContext);
 
+  const info = () => {
+
+    message.info("You logged out");
+  };
   // this fuction created for only homepage if you scroll after 100vh it will change its theme to theme mode
   useEffect(() => {
     const handleScroll = () => {
@@ -163,6 +168,7 @@ const Navbar = () => {
     }
   }, [token]);
   const Logout = () => {
+    info();
     localStorage.removeItem("token");
     console.log("inside");
     Asd();
@@ -230,7 +236,7 @@ const Navbar = () => {
                 
               </Link>
               <ThemeToggle ishome={isHome} scroll={scrolled}/>
-              <BurgerMenu></BurgerMenu>
+              <BurgerMenu ishome={isHome} scroll={scrolled}/>
               
             </Section>
           </Wrapper>
