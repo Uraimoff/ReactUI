@@ -25,6 +25,7 @@ background: ${(props)=>(props.theme==='light'?'white':'black')};
 color: ${(props)=>(props.theme==='light'?'black':'white')};
 z-index: 2;
 position: relative;
+transition: all 0.3s ease;
 `
 const WrCont = styled.img`
  width: 100px;
