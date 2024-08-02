@@ -77,7 +77,7 @@ export const button = [
 
   {/* Link Button */}
   <a
-    href="#"
+    href="#hi"
     className="text-blue-500 hover:opacity-75 active:opacity-60 py-1.5 px-3 text-sm transition"
   >
     Link Button
