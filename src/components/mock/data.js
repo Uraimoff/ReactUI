@@ -44,19 +44,92 @@ export const obj = [
 export const button = [
   {
     id: 1,
-    title: 'Buttons',
+    title: 'Type',
+    content: (
+<div className="p-4 rounded-md flex-wrap flex gap-2">
+  {/* Primary Button */}
+  <button
+    className="!bg-blue-500 text-white py-1.5 px-3 text-sm rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Primary Button
+  </button>
+
+  {/* Default Button */}
+  <button
+    className="border border-gray-300 py-1.5 px-3 text-sm rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Default Button
+  </button>
+
+  {/* Dashed Button */}
+  <button
+    className="border border-dashed border-gray-300 py-1.5 px-3 text-sm rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Dashed Button
+  </button>
+
+  {/* Text Button */}
+  <button
+    className="bg-transparent  py-1.5 px-3 text-sm transition hover:opacity-75 active:opacity-60"
+  >
+    Text Button
+  </button>
+
+  {/* Link Button */}
+  <a
+    href="#"
+    className="text-blue-500 hover:opacity-75 active:opacity-60 py-1.5 px-3 text-sm transition"
+  >
+    Link Button
+  </a>
+</div>
+
+    ),
     component: `
-    <div>
-      <h1 class="title bg-[yellow]">Hello World</h1>
-      <p class="description">This is a paragraph rendered from an HTML string with class names.</p>
-      <button class="btn btn-primary">Click Me</button>
-    </div>
+ <div className="p-4 rounded-md flex gap-2">
+  {/* Primary Button */}
+  <button
+    className="!bg-blue-500 text-white py-2 px-4 rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Primary Button
+  </button>
+
+  {/* Default Button */}
+  <button
+    className="border border-gray-300 py-2 px-4 rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Default Button
+  </button>
+
+  {/* Dashed Button */}
+  <button
+    className="border border-dashed border-gray-300 py-2 px-4 rounded-md transition hover:opacity-75 active:opacity-60"
+  >
+    Dashed Button
+  </button>
+
+  {/* Text Button */}
+  <button
+    className="bg-transparent  py-2 px-4 transition hover:opacity-75 active:opacity-60"
+  >
+    Text Button
+  </button>
+
+  {/* Link Button */}
+  <a
+    href="#"
+    className="text-blue-500 hover:opacity-75 active:opacity-60 py-2 px-4 transition"
+  >
+    Link Button
+  </a>
+</div>
 `,
-    description: 'this is button'
+    description: 'There are five type of buttons in antd, namely they are: primary buttons, default buttons, dashed buttons, text buttons, and link buttons.'
   },
   {
     id: 1,
     title: 'Buttons',
+    content: (<div>Hello World</div>),
     component: `
     <div className="flex flex-wrap space-x-2 space-y-2">
       <button className="flex items-center justify-center p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 dark:bg-gray-800 dark:hover:bg-gray-700">

@@ -1,11 +1,13 @@
 import React from 'react'
 import ComponentTable from '../../Generic/ComponentTable'
 import { button } from '../../mock/data'
+import { ThemeContext } from '../contexts/ThemeContext';
+import { useContext } from 'react';
 // import axios from 'axios'
 
 const Buttons = () => {
   // const [button, setButton]= useState(null)
-
+  const { theme } = useContext(ThemeContext);
 // https://647880a0362560649a2dea0d.mockapi.io/ui/component/buttons
 // this is code and data from backend
 // useEffect(() => {
@@ -22,10 +24,11 @@ const Buttons = () => {
 
   return (
     <>
+    
     {button ?
-    <div style={{color: "white"}}>
+    <div className='flex col-2' style={{color: "white"}}>
       {button.map(dat=>
-    <ComponentTable key={dat.id} Content={dat.component} Title={dat.title} Descriptions={dat.description} code={dat.component}/>
+    <ComponentTable theme={theme} key={dat.id} Content={dat.content} Title={dat.title} Descriptions={dat.description} code={dat.component}/>
         )}
     </div>
     :
