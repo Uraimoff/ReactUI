@@ -186,7 +186,7 @@ const Navbar = () => {
 
             <Section onClick={() => navigate("./home")}>
               <Logo  src={!scrolled && isHome ? react : theme === 'light' ?  darkReact : react} />
-              <H3 isHome={isHome} scrolled={scrolled} theme={theme} >React Component</H3>
+              <H3 isHome={isHome} scrolled={scrolled} theme={theme} >DocUI</H3>
             </Section>
             <Section ref={containerRef}>
             

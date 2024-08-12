@@ -103,7 +103,7 @@ color: ${(props) => {
   }};
 background-color: transparent;
 margin-bottom: 0;
-
+font-size: 20px;
 @media only screen and (max-width: 580px) {
     display: none;
 }

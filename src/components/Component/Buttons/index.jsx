@@ -26,7 +26,7 @@ const Buttons = () => {
     <>
     
     {button ?
-    <div className='flex col-2' style={{color: "white"}}>
+    <div className='  md:columns-2 w-full md:h-fit md:box-border' style={{color: "white"}}>
       {button.map(dat=>
     <ComponentTable theme={theme} key={dat.id} Content={dat.content} Title={dat.title} Descriptions={dat.description} code={dat.component}/>
         )}

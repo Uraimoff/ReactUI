@@ -32,7 +32,7 @@ const Homec = () => {
         <Container >
           <div className="imgWr ">
             <div className="wr">
-              <H1>React Component</H1>
+              <H1>DocUI</H1>
               <UniversTxt>
               We're thrilled to have you here! Our mission is to empower developers by providing a comprehensive library of React components designed to make your development process smoother, faster, and more enjoyable. Whether you're building a simple website or a complex application, our components are crafted to help you create beautiful, responsive, and accessible user interfaces with ease.
               </UniversTxt>
