@@ -2,6 +2,7 @@ import React from "react";
 import AllComponent from "../components/Component/AllMap";
 import Buttons from "../components/Component/Buttons";
 import ChatGpt from "../components/Component/ChatGpt";
+import Logins from "../components/Component/Logins";
 import Dropdown from "../components/Component/Dropdown";
 import Inputs from "../components/Component/Inputs";
 import MusicPlayer from "../components/Component/MusicPlayer";
@@ -133,6 +134,14 @@ export const navbar = [
     element: <ChatGpt/>,
     title: "ChatGPT",
     path: "/chatgpt",
+    private: false,
+    hidden: false,
+    component: true,
+  },
+  {
+    element: <Logins/>,
+    title: "Logins",
+    path: "/logins",
     private: false,
     hidden: false,
     component: true,

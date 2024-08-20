@@ -1,0 +1,19 @@
+.eye-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye-icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+/* .eye-icon.active {
+  transform: scale(1.2);
+} */
+
+/* .eye-icon.focused {
+  You can add any focused-specific styles here
+} */

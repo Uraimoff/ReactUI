@@ -29,10 +29,10 @@ right: -130px;
 height: 100vh;
 top: 33px;
 display: none;
-background-color: rgba(0, 0, 0, 0.5);
+background: #fffff1a;
+backdrop-filter: blur(16px) saturate(120%);
 /* opacity: 0.5; */
 /* background: #808080; */
-backdrop-filter: blur(8px);
 opacity: ${(props) => (props.isActive ? 1 : 0)};
 transition: all 0.5s ease;
 width: ${(props) => (props.isActive ? "400px" : "0")};

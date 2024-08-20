@@ -8,7 +8,7 @@ export const obj = [
       token: "Ibrohimasdvdffghkfdffdsll112"
     },
     {
-      name: "Admin~",
+      name: "Admin",
       token: "Adminasdvdffghkfdffdsll112"
     },
   ];
