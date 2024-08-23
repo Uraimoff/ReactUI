@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { ChatContainer, ChatQuestion, ChatWrapper, InputWrapper, StyledButton, StyledInput } from "./styled";
+import { ChatContainer, ChatQuestion, ChatWrapper, InputWrapper, RelativeInput, StyledButton, StyledInput } from "./styled";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const ChatGpt = () => {
@@ -80,6 +80,7 @@ const ChatGpt = () => {
         ))}
       </ChatWrapper>
       <InputWrapper theme={theme}>
+      <RelativeInput>
         <StyledInput
           ref={inputRef}
           placeholder="Ask whatever you want"
@@ -89,10 +90,11 @@ const ChatGpt = () => {
           onKeyDown={handlePress}
           onFocus={() => setIsInputFocused(true)}
           onBlur={() => setIsInputFocused(false)}
-        />
+          />
         <StyledButton theme={theme} onClick={handleClick}>
           {value || isInputFocused ? "Send" : "CTRL+M"}
         </StyledButton>
+          </RelativeInput>
       </InputWrapper>
     </ChatContainer>
   );

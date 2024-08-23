@@ -36,7 +36,12 @@ const ChatWrapper = styled.div`
   max-width: 900px; /* Adjust based on your design */
 `;
 
+const RelativeInput = styled.div`
+  position: relative;
+  width: 100%;
+`
 const InputWrapper = styled.div`
+z-index: 2;
   display: flex;
   align-items: center;
   background-color: ${(props)=>(props.theme==='light'?'#E5E7EB':'#2c2c2e' )} ;
@@ -62,7 +67,7 @@ const StyledInput = styled.input`
   flex: 1;
   background-color: transparent;
   border: none;
-  
+  width: 100%;
   padding: 10px;
   outline: none;
   font-size: 16px;
@@ -72,6 +77,8 @@ const StyledButton = styled.button`
   background-color: ${(props)=>(props.theme==='light'?'#4B5563':'#3d3d3d' )}  ;
   border: none;
   color: white;
+  position: absolute;
+  right:0px;
   padding: 10px 20px;
   margin-left: 10px;
   border-radius: 5px;
@@ -86,4 +93,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export {StyledButton,StyledInput,InputWrapper, ChatWrapper, ChatContainer, ChatQuestion}
+export {StyledButton,StyledInput,InputWrapper,RelativeInput, ChatWrapper, ChatContainer, ChatQuestion}
