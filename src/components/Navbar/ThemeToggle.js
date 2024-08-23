@@ -12,14 +12,14 @@ const ThemeToggle = ({ishome, scroll}) => {
     const iconSrc = () => {
         if (!scroll && ishome) {
             // Home page before 100vh
-            return theme === 'light' ? lightSun : lightMoon;
+            return theme === 'light' ? lightMoon : lightSun;
         } else {
             // After 100vh or on other pages
             return theme === 'light' ? darkMoon : lightSun;
         }
     };
     return (
-        <button  className='mr-[5px] sm:m-0' onClick={toggleTheme}>
+        <button  className='mr-[5px] hover:opacity-60 transition-all duration-400 sm:m-0' onClick={toggleTheme}>
            <img className='block h-8 w-11 sm:w-8 ml-2 border   border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent' src={iconSrc()} alt='change'/> 
         </button>
     );

@@ -1,9 +1,13 @@
 import React from "react";
 import ForSideAds from "../Generic/ForSideAds";
 import SideNav from "../Component/SideNav";
-import { ContentWrapper,  PlaceBar,  } from "./style";
+import { ContentWrapper, PlaceBar } from "./style";
+// import LanguageContext from "../Component/contexts/LanguageContext";
+import MainTxt from "../Generic/Texts/MainTxt";
+import SecondaryTxt from "../Generic/Texts/SecondaryTxt";
 
 const LaoyoutS = ({ children }) => {
+  // const { language } = useContext(LanguageContext);
   return (
     <div className="flex gap-12 w-full">
       <div className="fixed top-0 hidden lg:block left-0 h-full">
@@ -12,67 +16,32 @@ const LaoyoutS = ({ children }) => {
       <PlaceBar></PlaceBar>
       <div className="w-full flex">
         <ContentWrapper>
-          
-          {children} 
-          <div>Buxoro qamali — 1220-yil mart oyida, yaʼni moʻgʻullar tomonidan Xorazmshohlar davlatinining bosib olishi davrida sodir boʻlgan harbiy bosqin. Bosqinda Moʻgʻullar imperiyasining xoni Chingizxon sulton Muhammad II tomonidan boshqarilayotgan Xorazmshohlar davlati bilan tutashgan chegaraning turli tomonlaridan hujum uyushtirgan. Xorazmshoh yirik shaharlarni yakka tartibda mudofaa qilishni rejalashtirgan boʻlsa, moʻgʻullar chegara shahar — Oʻtrorni qamal qilib, Xorazmshohlar davlatiga qaqshatqich zarbalar berishni maqsad qilgandi. Buxoro shahri Xorazmshohlar davlatining yirik savdo va madaniy markazi boʻlgan. Shahar Moʻgʻullar imperiyasi bilan chegaradan ancha uzoqda joylashganligi sababli xorazmshoh bu shaharni himoya qilish uchun 20 000 dan kamroq askar ajratgan. Soni 30 000 dan 50 000 gacha boʻlgan moʻgʻul qoʻshinlari katta qoʻshin uchun oʻtib boʻlmas toʻsiq deb hisoblangan Qizilqum choʻlini kesib oʻtishga muvaffaq boʻlganlar. Buxoro mudofaachilari butunlay sarosimaga tushgan va muvaffaqiyatsiz jangdan soʻng tashqi shahar uch kun ichida taslim boʻlgan. Xorazmlik hukmdorga sodiq askarlar qal’a buzib tashlangunga qadar ikki haftadan kamroq vaqt davomida mudofaani davom ettirganlar. Moʻgʻul qoʻshini qoʻrgʻondagi barchani oʻldirib, aholining katta qismini qul qilib olgan. Mohir hunarmandlar mehnat mahsuli moʻgʻullar tomonidan oʻzlashtirilgan, boshqalar esa harbiylikka jalb etilgan. Garchi oʻsha paytda Buxoro yongʻinlar oqibatida vayron boʻlgan boʻlsa-da, talafot nisbatan kamroq boʻlgan. Qisqa vaqt ichida shahar yana savdo va madaniy markazga aylanib, Pax Mongolica davrida yanada rivojlangan.</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello last</div>
+          {children}
+          <section className="md:w-[70%] justify-start w-full flex-col start gap-[30px] mt-[80px]">
+            <MainTxt
+              en={
+                "Production-ready website templates, built the way you want them."
+              }
+              ru={
+                "Готовые к использованию шаблоны веб-сайтов, созданные так, как вы этого хотите."
+              }
+              uz={
+                "Siz xohlagan tarzda yaratilgan, ishlab chiqarishga tayyor veb-sayt shablonlari."
+              }
+            />
+
+            <SecondaryTxt
+              en={
+                "Visually-stunning, easy to customize site templates built with React.js. The perfect starting point for your next project and the ultimate resource for learning how experts build real websites with DocUI."
+              }
+              ru={
+                "Визуально впечатляющие, легко настраиваемые шаблоны сайтов, созданные на основе React.js. Идеальная отправная точка для вашего следующего проекта и отличный ресурс для изучения того, как эксперты создают реальные веб-сайты с помощью DocUI."
+              }
+              uz={
+                "React.js yordamida yaratilgan, vizual jihatdan hayratlanarli va oson sozlanadigan sayt shablonlari. Bu sizning keyingi loyihangiz uchun mukammal boshlang'ich nuqta va DocUI yordamida haqiqiy veb-saytlarni qanday qurishni o'rganish uchun eng yaxshi resurs."
+              }
+            />
+          </section>
         </ContentWrapper>
         <div className="xl:block hidden fixed right-0">
           <ForSideAds />

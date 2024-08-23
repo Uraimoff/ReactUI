@@ -13,6 +13,7 @@
     "css": "^3.0.0",
     "gsap": "^3.12.5",
     "http-proxy-middleware": "^3.0.0",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",

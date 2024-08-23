@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import PlayerProvider from './components/Component/contexts/PlayerContext';
 import ThemeProvider from './components/Component/contexts/ThemeContext';
+import {LanguageProvider}  from './components/Component/contexts/LanguageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <BrowserRouter>
     <PlayerProvider>
       <ThemeProvider>
+      <LanguageProvider>
     <App />
+      </LanguageProvider>
       </ThemeProvider>
     </PlayerProvider>
     </BrowserRouter>

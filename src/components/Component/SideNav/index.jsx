@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { navbar } from "../../../utils/navbar";
 import { ThemeContext } from "../../../components/Component/contexts/ThemeContext"; // Adjust the path as needed
+import LanguageContext from "../contexts/LanguageContext";
 
 const SideNav = () => {
   const { theme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
 
   const activeClassName =
     "text-gray-300 relative no-underline overflow-hidden rounded font-montserrat font-semibold";
@@ -32,7 +34,7 @@ const SideNav = () => {
                     theme === "light" ? "lightText" : "darkText"
                   } hover:bg-dayBackground rounded`}
                 >
-                  {value.title}
+                  { language === 'en' ? value.title :language==='ru' ? value.titleru :  value.titleuz}
                 </div>
               </NavLink>
             )

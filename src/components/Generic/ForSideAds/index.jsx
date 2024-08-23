@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./../../Component/contexts/ThemeContext"; // Adjust the path as needed
+import LanguageContext from "../../Component/contexts/LanguageContext";
 
 const ForSideAds = () => {
   const { theme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
 
   return (
     <>
@@ -30,13 +32,17 @@ const ForSideAds = () => {
             theme === "light" ? "border-gray-300 bg-white" : "border-gray-700 bg-gray-800"
           }`}
         >
-          🚀 Join the React UI team!
+          {language==='en'? 
+          "🚀 Join the DocUI team!" : language==='ru'? "🚀 Присоединяйтесь к команде DocUI!" : "🚀 DocUI jamoasiga qo'shiling!"
+          }
           <div
             className={`p-2.5 text-sm ${
               theme === "light" ? "text-gray-700" : "text-gray-300"
             }`}
           >
-            We're looking for React Engineers and other amazing roles－come find
+            {language==='en'?
+           "We are actively seeking talented React Engineers and other exceptional professionals for various roles! Come and explore exciting opportunities with us."
+          : language==='ru'? "Мы ищем талантливых React-инженеров и других замечательных специалистов! Присоединяйтесь к нам и откройте для себя увлекательные возможности." : "Biz React muhandislarini va boshqa ajoyib mutaxassislarni izlayapmiz! Biz bilan birga ajoyib imkoniyatlarni kashf eting."}
             out more!
           </div>
         </div>

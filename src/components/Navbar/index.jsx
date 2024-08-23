@@ -4,11 +4,10 @@ import { navbar } from "../../utils/navbar";
 import LaoyoutS from "../LayoutS";
 import react from "./../../assets/svg/react.svg";
 import darkReact from "./../../assets/svg/darkReact.svg";
-import { message, } from "antd";
+import { message } from "antd";
 import logout from "./../../assets/svg/logout.svg";
 import darkLogout from "./../../assets/svg/darkLogout.svg";
 import { ThemeContext } from "./../Component/contexts/ThemeContext"; // Adjust the path as needed
-
 
 import {
   Container,
@@ -29,6 +28,8 @@ import {
 } from "./style";
 import BurgerMenu from "./BurgerMenu";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageContext from "../Component/contexts/LanguageContext";
 
 const Navbar = () => {
   const location = useLocation();
@@ -43,9 +44,9 @@ const Navbar = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef(null);
   const { theme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
 
   const info = () => {
-
     message.info("You logged out");
   };
   // this fuction created for only homepage if you scroll after 100vh it will change its theme to theme mode
@@ -67,7 +68,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -111,15 +111,20 @@ const Navbar = () => {
     const value = event.target.value.toLowerCase();
     setQuery(value);
 
+    // Determine which title to use based on the selected language
+    const titleKey =
+      language === "en" ? "title" : language === "ru" ? "titleru" : "titleuz";
+
     const filteredResults = navbar.filter((item) =>
-      item.title.toLowerCase().includes(value)
+      item[titleKey].toLowerCase().includes(value)
     );
 
     setResults(filteredResults);
     setSelectedIndex(-1);
   };
-      // checks if current location is home 
-  const isHome = location.pathname === '/home'
+
+  // checks if current location is home
+  const isHome = location.pathname === "/home";
 
   const handleItemClick = (path) => {
     navigate(path);
@@ -179,17 +184,30 @@ const Navbar = () => {
 
   return (
     <>
-      <Container  theme={theme}>
+      <Container theme={theme}>
         <Main>
           <Opacity></Opacity>
-          <Wrapper isHome={isHome} scrolled={scrolled} className="md:!px-[30px] lg:!px-0" theme={theme} >
-
+          <Wrapper
+            isHome={isHome}
+            scrolled={scrolled}
+            className="md:!px-[30px] lg:!px-0"
+            theme={theme}
+          >
             <Section onClick={() => navigate("./home")}>
-              <Logo  src={!scrolled && isHome ? react : theme === 'light' ?  darkReact : react} />
-              <H3 isHome={isHome} scrolled={scrolled} theme={theme} >DocUI</H3>
+              <Logo
+                src={
+                  !scrolled && isHome
+                    ? react
+                    : theme === "light"
+                    ? darkReact
+                    : react
+                }
+              />
+              <H3 isHome={isHome} scrolled={scrolled} theme={theme}>
+                DocUI
+              </H3>
             </Section>
             <Section ref={containerRef}>
-            
               <Input
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -199,16 +217,20 @@ const Navbar = () => {
                 placeholder="Search"
               />
               <Span isActive={isActive}>CTRL+K</Span>
-            
+
               <Results show={query !== ""}>
                 {results.map((item, index) => (
                   <ResultItem
-                  theme={theme}
-                  key={index}
-                  selected={index === selectedIndex}
-                  onMouseDown={() => handleItemClick(item.path)}
+                    theme={theme}
+                    key={index}
+                    selected={index === selectedIndex}
+                    onMouseDown={() => handleItemClick(item.path)}
                   >
-                    {item.title}
+                    {language === "en"
+                      ? item.title
+                      : language === "ru"
+                      ? item.titleru
+                      : item.titleuz}
                   </ResultItem>
                 ))}
               </Results>
@@ -220,24 +242,43 @@ const Navbar = () => {
                     !value.component &&
                     !value.hidden && (
                       <Link
-                      isHome={isHome} scrolled={scrolled}
-                      theme={theme}
+                        isHome={isHome}
+                        scrolled={scrolled}
+                        theme={theme}
                         key={index}
                         className={({ isActive }) => isActive && "active"}
                         to={value.path}
                       >
-                        {value.title}
+                        {language === "en"
+                          ? value.title
+                          : language === "ru"
+                          ? value.titleru
+                          : value.titleuz}
                       </Link>
                     )
                 )}
               </Nav>
-              <Link theme={theme} isHome={isHome} scrolled={scrolled}  onClick={Logout}>
-                <Outimg className='block h-8 w-8 ml-2 border border-gray-500 rounded-md p-1.5 bg-transparent' src={!scrolled && isHome ? logout : theme === 'light' ? darkLogout : logout} alt="" />
-                
+              <Link
+                theme={theme}
+                isHome={isHome}
+                scrolled={scrolled}
+                onClick={Logout}
+              >
+                <Outimg
+                  className="block h-8 w-8 ml-2 border border-gray-500 rounded-md p-1.5 bg-transparent"
+                  src={
+                    !scrolled && isHome
+                      ? logout
+                      : theme === "light"
+                      ? darkLogout
+                      : logout
+                  }
+                  alt=""
+                />
               </Link>
-              <ThemeToggle ishome={isHome} scroll={scrolled}/>
-              <BurgerMenu ishome={isHome} scroll={scrolled}/>
-              
+              <ThemeToggle ishome={isHome} scroll={scrolled} />
+              <LanguageSwitcher ishome={isHome} scroll={scrolled} />
+              <BurgerMenu ishome={isHome} scroll={scrolled} />
             </Section>
           </Wrapper>
         </Main>

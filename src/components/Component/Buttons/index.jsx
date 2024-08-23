@@ -34,10 +34,6 @@ const Buttons = () => {
     :
     undefined
 }
-<div>
-  <div className='underline'>why isn't working</div>
-  <button className='bg-[green]'>Hello</button>
-</div>
   </>
   )
 }

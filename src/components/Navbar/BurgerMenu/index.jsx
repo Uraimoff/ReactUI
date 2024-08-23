@@ -7,10 +7,12 @@ import darkClose from "./../../../assets/svg/darkClose.svg";
 import { Link } from "react-router-dom";
 import { navbar } from "../../../utils/navbar";
 import { ThemeContext } from "../../Component/contexts/ThemeContext";
+import LanguageContext from "../../Component/contexts/LanguageContext";
 
 const BurgerMenu = ({scroll, ishome}) => {
   const [active, setActive] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
   const handleClick = () => {
     setActive((current) => !current);
   };
@@ -28,7 +30,7 @@ const BurgerMenu = ({scroll, ishome}) => {
             !value.hidden && (
               <Items key={index}>
                   <Link style={{background: 'transparent', color: 'white', textDecoration: 'none'}} to={value.path} onClick={() => setActive(false)}>
-                    {value.title}
+                  { language === 'en' ? value.title :language==='ru' ? value.titleru :  value.titleuz}
                   </Link>
                 </Items>
               )
