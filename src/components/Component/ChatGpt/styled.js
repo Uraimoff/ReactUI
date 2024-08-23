@@ -5,7 +5,7 @@ const ChatQuestion = styled.div`
     if(props.theme==='light'){
       return props.className === 'ai' ? '#E5E7EB' : 'inherit'
     } else{
-    return props.className === 'ai' ? '#444654' : 'inherit';
+    return props.className === 'ai' ? '#2C2C2E' : 'inherit';
   }}};
   /* color: ${(props)=>(props.theme==='light'?'black':'white' )} ; */
   padding: 10px;
@@ -74,7 +74,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  background-color: ${(props)=>(props.theme==='light'?'#4B5563':'#3d3d3d' )}  ;
+  background-color: #3B82F6  ;
   border: none;
   color: white;
   position: absolute;

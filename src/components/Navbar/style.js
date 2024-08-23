@@ -266,13 +266,13 @@ const ResultItem = styled.li`
   }};
   background: ${(props) => {
     if (props.selected) {
-      return props.theme === 'light' ? '#D8D8D0' : '#808080';
+      return props.theme === 'light' ? '#E5E7EB' : '#1A1A1A';
     } else {
-      return props.theme === 'light' ? '#fff' : '#262626';
+      return props.theme === 'light' ? '#F9FAFB' : '#2C2C2E';
     }
   }};
   &:hover{
-    background: ${(props)=>(props.theme === 'light' ? '#D8D8D0' : '#808080')};
+    background: ${(props)=>(props.theme === 'light' ? '#E5E7EB' : '#1A1A1A')};
   }
   ;
 `

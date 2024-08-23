@@ -9,8 +9,12 @@ module.exports = {
         lightText: '#000000',
         darkBg: '#000000',
         darkText: '#ffffff',
-        dayBackground: 'rgb(125, 125, 125, 0.3)',
-        nightBackground: 'rgb(0, 0, 0, 0.5)',
+        defaultLightBg: '#F9FAFB',
+        secondaryLightBg: '#E5E7EB',
+        defaultDarkBg: '#1A1A1A',
+        secondaryDarkBg: '#2C2C2E',
+        // nightBackground: 'rgb(0, 0, 0, 0.5)',
+        defaultBlue: '#3B82F6'
       },
       boxShadow: {
         justShadow: '0px 0px 16px -1px rgba(34, 60, 80, 0.14)',

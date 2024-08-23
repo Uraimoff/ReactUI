@@ -10,8 +10,8 @@ const ForSideAds = () => {
     <>
       <div className="w-60 box-border absolute right-10  flex-col gap-5 hidden xl:flex">
         <div
-          className={`rounded-lg border box-border p-1.5 ${
-            theme === "light" ? "border-gray-300 bg-white" : "border-gray-700 bg-gray-800"
+          className={`rounded-lg  box-border p-1.5 ${
+            theme === "light" ? " bg-secondaryLightBg" : " bg-defaultDarkBg"
           }`}
         >
           <div
@@ -28,8 +28,8 @@ const ForSideAds = () => {
           </div>
         </div>
         <div
-          className={`rounded-lg border box-border p-1.5 ${
-            theme === "light" ? "border-gray-300 bg-white" : "border-gray-700 bg-gray-800"
+          className={`rounded-lg  box-border p-1.5 ${
+            theme === "light" ? " bg-secondaryLightBg  " : " bg-defaultDarkBg"
           }`}
         >
           {language==='en'? 
