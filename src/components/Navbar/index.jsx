@@ -258,27 +258,31 @@ const Navbar = () => {
                     )
                 )}
               </Nav>
-              <Link
-                theme={theme}
-                isHome={isHome}
-                scrolled={scrolled}
-                onClick={Logout}
-              >
-                <Outimg
-                  className="block h-8 w-8 ml-2 border border-gray-500 rounded-md p-1.5 bg-transparent"
-                  src={
-                    !scrolled && isHome
-                      ? logout
-                      : theme === "light"
-                      ? darkLogout
-                      : logout
-                  }
-                  alt=""
-                />
-              </Link>
-              <ThemeToggle ishome={isHome} scroll={scrolled} />
-              <LanguageSwitcher ishome={isHome} scroll={scrolled} />
-              <BurgerMenu ishome={isHome} scroll={scrolled} />
+              <div className="w-full flex items-center ml-[5px] gap-[5px] ">
+                <Link
+                  theme={theme}
+                  isHome={isHome}
+                  scrolled={scrolled}
+                  onClick={Logout}
+                >
+                  <Outimg
+                    className="block h-8 w-8  border border-gray-500 rounded-md p-1.5 bg-transparent"
+                    src={
+                      !scrolled && isHome
+                        ? logout
+                        : theme === "light"
+                        ? darkLogout
+                        : logout
+                    }
+                    alt=""
+                  />
+                </Link>
+                <div className="hidden xl:block">
+                  <ThemeToggle ishome={isHome} scroll={scrolled} />
+                </div>
+                <LanguageSwitcher ishome={isHome} scroll={scrolled} />
+                <BurgerMenu ishome={isHome} scroll={scrolled} />
+              </div>
             </Section>
           </Wrapper>
         </Main>

@@ -5,7 +5,7 @@ import languageDark from "./../../../assets/svg/languageDark.svg";
 import languageDay from "./../../../assets/svg/languageDay.svg";
 import { lang } from '../../../utils/navbar';
 
-const LanguageSwitcher = ({ ishome, scroll }) => {
+const LanguageSwitcher = ({ ishome, auth, scroll }) => {
   const { changeLanguage } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -45,6 +45,9 @@ const LanguageSwitcher = ({ ishome, scroll }) => {
     if (!scroll && ishome) {
       // Home page before 100vh
       return theme === 'light' ? languageDay : languageDay;
+    } else if(auth){
+      // After 100vh or on other pages
+      return  languageDay;
     } else {
       // After 100vh or on other pages
       return theme === 'light' ? languageDark : languageDay;
@@ -52,10 +55,10 @@ const LanguageSwitcher = ({ ishome, scroll }) => {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
-      <button className="mr-[5px] flex justify-center sm:m-0" onClick={toggleDropdown}>
+    <div className="z-50 relative" ref={dropdownRef}>
+      <button className=" w-8 flex justify-center  sm:m-0" onClick={toggleDropdown}>
         <img
-          className="block hover:opacity-60 transition-all duration-400 h-8 w-11 sm:w-8 ml-2 border border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent"
+          className="block hover:opacity-60 transition-all duration-400 h-8 w-11 sm:w-8  border border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent"
           src={iconSrc()}
           alt="change"
         />

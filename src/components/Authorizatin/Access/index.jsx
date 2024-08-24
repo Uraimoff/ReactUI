@@ -2,7 +2,8 @@ import React, { useState, useContext } from "react";
 import { obj } from "../../mock/data";
 import { useNavigate } from "react-router-dom";
 import { message, } from "antd";
-import { ThemeContext } from "./../../Component/contexts/ThemeContext";
+// import { ThemeContext } from "./../../Component/contexts/ThemeContext";
+import LanguageContext from "../../Component/contexts/LanguageContext";
 
 const Access = () => {
   const [body, setBody] = useState([]);
@@ -11,8 +12,9 @@ const Access = () => {
   const [colors, setColors] = useState([]);
   const navigate = useNavigate();
   const [messageApi] = message.useMessage();
+  const { language } = useContext(LanguageContext);
+
   const key = "updateable";
-  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const openMassage = () => {
     messageApi.open({
@@ -23,10 +25,10 @@ const Access = () => {
   };
 
   const info = () => {
-    message.info("You will be redirected");
+    message.success(language==='en'?"You are logged in":language==='ru'?"Вы вошли в систему":"Tizimga kirdingiz");
   };
   const error = () => {
-    message.error("Please enter correct name");
+    message.error(language==='en'?"Please enter correct name":language==='ru'?"Пожалуйста, введите правильное имя":"Iltimos, to'g'ri ismni kiriting");
   };
 
   const onChange = ({ target: { value, name } }) => {
@@ -44,7 +46,7 @@ const Access = () => {
     if (e.key === "Enter") {
       let value = response
         ? `Welcome ${body.name}`
-        : `Access denied ${body.name}` && error();
+        : error();
       let comparison = `Welcome ${body.name}`;
       let colr = body.name;
       setVal(value);
@@ -64,7 +66,7 @@ const Access = () => {
   const Submit = () => {
     let value = response
       ? `Welcome ${body.name}`
-      : `Access denied ${body.name}` && error();
+      :  error();
     let comparison = `Welcome ${body.name}`;
     let colr = body.name;
     setVal(value);
@@ -85,14 +87,13 @@ const Access = () => {
       <div
         className={`flex flex-col  justify-center items-center gap-7  py-[10px]  box-border border border-green-500 rounded w-full max-w-[550px] min-w-[350px]   my-12 text-2xl font-bold z-[888] ${
           val === com
-            ? "bg-green-500 text-black"
+            ? "bg-green-900 text-white"
             : colors.length <= 1
-            ? "bg-gray-900 text-black"
-            : "bg-red-500 text-black"
+            ? "bg-defaultDarkBg text-black"
+            : "bg-red-900 text-white"
         } `}
       >
-        {val}
-        <p className="bg-transparent text-lg text-white">Enter Author's name</p>
+        <p className="bg-transparent text-lg text-white">{language==='en'?"Enter Author's name":language==='ru'?"Введите имя автора":"Muallifning ismini kiriting"}</p>
         <input
           onChange={onChange}
           onKeyDown={press}
@@ -105,10 +106,7 @@ const Access = () => {
           onClick={Submit}
           className="text-green-500 border-2 border-green-500 p-2.5 w-[300px] active:opacity-60"
         >
-          Authorize
-        </button>
-        <button onClick={toggleTheme} className=" text-blue-500">
-          Toggle {theme === "light" ? "Dark" : "Light"} Mode
+         {language==='en'?"Authorize":language==='ru'?"Авторизоваться":"Tizimga kirish"}
         </button>
       </div>
     </>

@@ -3,9 +3,11 @@ import Access from "./Access";
 import {  H1,  } from "../Homec/styled";
 // import whiteFbi from './../../assets/img/whiteFbi.png'
 import react from './../../assets/svg/react.svg'
-import { Secret , Container} from "./style";
+import {  Container} from "./style";
 import './style.css'
 import { ThemeContext } from "../Component/contexts/ThemeContext";
+import ThemeToggle from './../Navbar/ThemeToggle'
+import LanguageSwitcher from './../Navbar/LanguageSwitcher'
 
 const Authorizatin = () => {
   const { theme } = useContext(ThemeContext);
@@ -901,10 +903,16 @@ const Authorizatin = () => {
         <span></span>
         </section>
         <div className="fixed z-40 top-20">
+          <div className='absolute bg-defaultDarkBg rounded  top-[-50px] right-0'>
+        <ThemeToggle auth={true} ></ThemeToggle>
+          </div>
+          <div className='absolute bg-defaultDarkBg rounded  top-0 right-0'>
+        <LanguageSwitcher auth={true} ></LanguageSwitcher>
+          </div>
         <div className="flex col justify-center">
           <div className="wrr">
         <img className='App-logo  w-[50px] h-[50px]' src={react} alt='REACT'/>
-        <H1>React JS<Secret>Top secret</Secret></H1>
+        <H1>DocUI</H1>
           </div>
         </div>
         <Access/>

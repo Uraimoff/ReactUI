@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const BurgerWr=styled.div`
@@ -23,13 +24,27 @@ background: transparent;
 height: 100%;
 `
 const Dropdown=styled.ul`
+
 overflow: hidden;
 position: absolute;
 right: -130px;
 height: 100vh;
 top: 33px;
 display: none;
-background: #fffff1a;
+background-color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#2C2C2E'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#D8D8D8' : '#2C2C2E'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
+  color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#000'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#fff' : '#000'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
 backdrop-filter: blur(16px) saturate(120%);
 /* opacity: 0.5; */
 /* background: #808080; */
@@ -54,5 +69,45 @@ const Items= styled.li`
     padding: 10px 30px;
     font-size: 18px;
     background: transparent;
+    color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
 `
-export {Burger,Dropdown,Items,BurgerWr, Outimg}
+const Links = styled(NavLink)`
+color: ${(props) => {
+    if (!props.scrolled && props.isHome) {
+      return '#fff'; // White text for home page before 100vh
+    } else {
+      return props.theme === 'light' ? '#000' : '#fff'; // Theme-dependent text color after 100vh or on other pages
+    }
+  }};
+text-decoration:none;
+background-color:  transparent;
+height: 30px;
+gap: 5px;
+align-items: center;
+display: flex;
+transition: all 0.4s;
+font-family: 'Montserrat';
+:hover{
+    background-color:  transparent;
+    padding: 0px 10px;
+    height: 30px;
+    /* margin: 12px; */
+    /* border-radius: 5px; */
+    opacity: 0.4;
+}
+:active{
+    padding: 0px 10px;
+    height: 30px;
+    /* padding: 5px 20px; */
+    /* margin: 12px; */
+    border-radius: 5px;
+    color: #f5f7da;
+}
+`
+export {Burger,Dropdown,Items,BurgerWr, Links, Outimg}

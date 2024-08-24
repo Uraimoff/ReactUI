@@ -125,7 +125,6 @@ color: ${(props) => {
 text-decoration:none;
 background-color:  transparent;
 height: 30px;
-padding: 0px 10px;
 gap: 5px;
 align-items: center;
 display: flex;
@@ -133,17 +132,11 @@ transition: all 0.4s;
 font-family: 'Montserrat';
 :hover{
     background-color:  transparent;
-    padding: 0px 10px;
     height: 30px;
-    /* margin: 12px; */
-    /* border-radius: 5px; */
     opacity: 0.4;
 }
 :active{
-    padding: 0px 10px;
     height: 30px;
-    /* padding: 5px 20px; */
-    /* margin: 12px; */
     border-radius: 5px;
     color: #f5f7da;
 }
