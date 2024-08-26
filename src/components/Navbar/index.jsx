@@ -214,7 +214,7 @@ const Navbar = () => {
                 ref={inputRef}
                 value={query}
                 onChange={handleSearch}
-                placeholder="Search"
+                placeholder={language==='en'? 'Search': language==='ru'?'Поиск': 'Qidiruv'}
               />
               <Span isActive={isActive}>CTRL+K</Span>
 

@@ -16,7 +16,8 @@ opacity: 0.9;
     opacity: 0.3;
 }
 `
-const Icon = styled.img``
+const Icon = styled.img`
+`
 
 
 export {Btn, Icon}

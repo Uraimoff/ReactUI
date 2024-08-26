@@ -6,7 +6,7 @@ import { message } from "antd";
 import { ThemeContext } from "./../../Component/contexts/ThemeContext";
 import { useState } from "react";
 
-const ComponentTable = ({ Content, Title, Descriptions, code }) => {
+const ComponentTable = ({ children,wholeCode, Title, Descriptions, code }) => {
   const { theme } = useContext(ThemeContext);
   const [copySuccess, setCopySuccess] = useState(false);
   const [show, SetShow] = useState(false);
@@ -15,7 +15,7 @@ const ComponentTable = ({ Content, Title, Descriptions, code }) => {
     message.info("Copied");
   };
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(code).then(() => {
+    navigator.clipboard.writeText(code || wholeCode).then(() => {
       setCopySuccess(true);
       info();
       setTimeout(() => setCopySuccess(false), 2000); // Reset after 2 seconds
@@ -59,7 +59,7 @@ const ComponentTable = ({ Content, Title, Descriptions, code }) => {
       }`}
     >
       {/* <HtmlStringRenderer htmlString={Content} /> */}
-      {Content}
+      {children}
       <div
         className={`relative border-t mt-5 pt-5 ${
           theme === "light"
@@ -97,7 +97,8 @@ const ComponentTable = ({ Content, Title, Descriptions, code }) => {
             className="text-[13px]"
             style={theme === "light" ? vs : irBlack}
           >
-            {`import React from 'react'
+            {wholeCode ||
+            `import React from 'react'
             
 const App: React.FC = () => (`+ code +
             `);

@@ -1,12 +1,15 @@
 import React, { useContext, useRef, useEffect, useState } from 'react';
 import LanguageContext from './../../Component/contexts/LanguageContext';
 import { ThemeContext } from '../../Component/contexts/ThemeContext';
-import languageDark from "./../../../assets/svg/languageDark.svg";
-import languageDay from "./../../../assets/svg/languageDay.svg";
+// import languageDark from "./../../../assets/svg/languageDark.svg";
+// import languageDay from "./../../../assets/svg/languageDay.svg";
+import britain from "./../../../assets/svg/languageFlags/britain.svg";
+import russia from "./../../../assets/svg/languageFlags/russia.svg";
+import uzbekistan from "./../../../assets/svg/languageFlags/uzbekistan.svg";
 import { lang } from '../../../utils/navbar';
 
-const LanguageSwitcher = ({ ishome, auth, scroll }) => {
-  const { changeLanguage } = useContext(LanguageContext);
+const LanguageSwitcher = () => {
+  const {language, changeLanguage } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,16 +45,18 @@ const LanguageSwitcher = ({ ishome, auth, scroll }) => {
 
   // Determine which icon to display
   const iconSrc = () => {
-    if (!scroll && ishome) {
-      // Home page before 100vh
-      return theme === 'light' ? languageDay : languageDay;
-    } else if(auth){
-      // After 100vh or on other pages
-      return  languageDay;
-    } else {
-      // After 100vh or on other pages
-      return theme === 'light' ? languageDark : languageDay;
-    }
+    // if (!scroll && ishome) {
+    //   // Home page before 100vh
+    //   return theme === 'light' ? languageDay : languageDay;
+    // } else if(auth){
+    //   // After 100vh or on other pages
+    //   return  languageDay;
+    // } else {
+    //   // After 100vh or on other pages
+    //   return theme === 'light' ? languageDark : languageDay;
+    // }
+   return language==='en'? britain : language==='ru'? russia : uzbekistan
+
   };
 
   return (

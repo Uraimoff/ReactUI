@@ -38,8 +38,13 @@ import half15 from './../../../assets/svg/eye/half15.svg';
 import half16 from './../../../assets/svg/eye/half16.svg';
 import half17 from './../../../assets/svg/eye/half17.svg';
 import half18 from './../../../assets/svg/eye/half18.svg';
+import darkEye from './../../../assets/svg/darkEye.svg';
+import whiteEye from './../../../assets/svg/whiteEye.svg';
+import darkEyeSlash from './../../../assets/svg/darkEye-slash.svg';
+import whiteEyeSlash from './../../../assets/svg/whiteEye-slash.svg';
 import { ThemeContext } from '../contexts/ThemeContext';
-
+import { Login } from '../../mock/data.js';
+import ComponentTable from '../../Generic/ComponentTable';
 const EyeLoginForm = () => {
   const [inputValue, setInputValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
@@ -115,9 +120,20 @@ const EyeLoginForm = () => {
   };
   
   
-
+const PasswordShow = ()=>{
+  if( theme ==='light'){
+    return halfMode ?  darkEyeSlash:darkEye 
+  } else { 
+    return halfMode ?  whiteEyeSlash:whiteEye 
+  }
+}
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen ${theme === "light" ? "bg-defaultLightBg text-black" : "bg-defaultDarkBg text-defaultLightBg"}`}>
+    <>
+    {Login?
+        <div className='  md:columns-2 w-full md:h-fit md:box-border' style={{color: "white"}}>
+    {Login.map(dat=>
+      <ComponentTable Descriptions={dat.description} Title={dat.title} wholeCode={dat.component}>
+    <div className={`flex flex-col w-full items-center justify-center  ${theme === "light" ? "bg-defaultLightBg text-black" : "bg-defaultDarkBg text-defaultLightBg"}`}>
     <div className="eye-container rounded-full overflow-hidden">
       <img
         src={getEyeSrc()}
@@ -133,23 +149,31 @@ const EyeLoginForm = () => {
       onBlur={handleBlur}
       className={`mt-5 p-2 ${theme === "light" ? "bg-secondaryLightBg text-black" : "bg-secondaryDarkBg text-white"} rounded-md`}
       placeholder="Login"
-    />
+      />
+    <div className='relative'>
     <input
       type={halfMode ? 'text' : 'password'}
       value={passwordValue}
       onChange={handlePasswordChange}
       onFocus={() => handleFocus('password')}
       onBlur={handleBlur}
-      className={`mt-5 p-2 ${theme === "light" ? "bg-secondaryLightBg text-black" : "bg-secondaryDarkBg text-white"} rounded-md`}
+      className={`mt-5 w-full p-2 ${theme === "light" ? "bg-secondaryLightBg text-black" : "bg-secondaryDarkBg text-white"} rounded-md`}
       placeholder="Password"
+      />
+    <img
+    alt='eye'
+    src={PasswordShow()}
+    onClick={handleHalfModeToggle}
+    className={` w-[35px]  ${theme === "light" ? "bg-secondaryLightBg " : "bg-secondaryDarkBg "} px-[5px] absolute top-[27px] right-[5px] pointer arounded-md`}
     />
-    <button
-      onClick={handleHalfModeToggle}
-      className={`mt-5 p-2 ${theme === "light" ? "bg-defaultBlue text-white" : "bg-defaultBlue text-white"} rounded-md`}
-    >
-      Toggle Half Blink Mode
-    </button>
+    </div>
   </div>
+  </ComponentTable>
+    )} 
+    </div>
+    : undefined}
+
+    </>
   );
 };
 
