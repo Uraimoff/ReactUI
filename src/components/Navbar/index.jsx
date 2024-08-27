@@ -47,7 +47,7 @@ const Navbar = () => {
   const { language } = useContext(LanguageContext);
 
   const info = () => {
-    message.info("You logged out");
+    message.info(language === 'en'?"You logged out" :language==='ru'?"Вы вышли из системы":'Siz tizimdan chiqdingiz');
   };
   // this fuction created for only homepage if you scroll after 100vh it will change its theme to theme mode
   useEffect(() => {
