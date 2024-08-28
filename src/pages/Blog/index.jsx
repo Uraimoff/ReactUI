@@ -40,7 +40,7 @@ const Blog = () => {
 
     const authorName = dat.author ? dat.author.login : 'Unknown';
     return (
-      <div key={index} className="flex justify-center flex-row px-[30px]">
+      <div key={index} className="flex justify-center flex-row ">
         <BlogNews 
           date={formattedDate} 
           version={formattedVersion} 

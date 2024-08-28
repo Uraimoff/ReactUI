@@ -11,7 +11,7 @@ const BlogNews = ({ date, version, description, author, commit }) => {
     <p className="text-sm mt-2 text-gray-500">Commit: {commit}</p>
     <p className="text-sm mt-2">{description}</p>
     <p className="text-sm text-gray-500 mt-2">Committed by: {author}</p>
-    <a href="#hi" className="text-blue-400 mt-4">Read more &rarr;</a>
+    <a href="#no-more" className="text-blue-400 mt-4">Read more &rarr;</a>
   </div>
   
   );
