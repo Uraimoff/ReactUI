@@ -16,8 +16,8 @@ const BlogNews = ({
     <div
       className={`relative sm:pb-12  flex flex-col items-start w-full p-6 border-l-4 ${
         theme === "light"
-          ? "bg-white border-blue-500 text-black"
-          : "bg-gray-800 border-blue-400 text-white"
+          ? "bg-defaultLightBg border-blue-500 text-black"
+          : "bg-defaultDarkBg border-blue-400 text-white"
       }`}
     >
       <span
