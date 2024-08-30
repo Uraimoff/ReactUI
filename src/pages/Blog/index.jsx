@@ -29,7 +29,7 @@ const Blog = () => {
   }, []);
 // console.log(datas.map((dat)=>(dat.committer.login)), 'github malumotlari')
   return (
-    <div className="max-w-[1240px] mb-[50px] w-full flex m-auto flex-col">
+    <div className="max-w-[1240px] mb-[50px] w-full px-[20px] xl:px-0 flex m-auto flex-col">
 {datas ? (
   datas.map((dat, index) => {
     const formattedDate = new Date(dat.date).toLocaleDateString(language === 'en' ? 'en-US' : language === 'ru' ? 'ru-RU' : 'en-US', {

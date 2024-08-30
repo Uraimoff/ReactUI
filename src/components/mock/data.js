@@ -418,3 +418,52 @@ export default EyeLoginForm;
     },
 
   ]
+
+ export  const buttonApi={en: [
+  {
+    property: 'autoInsertSpace',
+    description: 'We add a space between two Chinese characters by default, which can be removed by setting `autoInsertSpace` to `false`.',
+    type: 'boolean',
+    default: 'true',
+    version: '5.17.0',
+  },
+  {
+    property: 'block',
+    description: 'Option to fit button width to its parent width.',
+    type: 'boolean',
+    default: 'false',
+  },
+  // More properties...
+],
+ru: [
+  {
+    property: 'autoInsertSpace',
+    description: 'Мы добавляем пробел между двумя китайскими символами по умолчанию, который можно удалить, установив значение `autoInsertSpace` в `false`.',
+    type: 'boolean',
+    default: 'true',
+    version: '5.17.0',
+  },
+  {
+    property: 'block',
+    description: 'Опция подогнать ширину кнопки под ширину родителя.',
+    type: 'boolean',
+    default: 'false',
+  },
+  // More properties...
+],
+uz: [
+  {
+    property: 'autoInsertSpace',
+    description: 'Biz odatda ikkita xitoy belgilari orasiga bo‘shliq qo‘shamiz, bu bo‘shliqni `autoInsertSpace` ni `false` qilib o‘rnatish orqali olib tashlash mumkin.',
+    type: 'boolean',
+    default: 'true',
+    version: '5.17.0',
+  },
+  {
+    property: 'block',
+    description: 'Tugma kengligini uning ota-ona kengligiga moslashtirish opsiyasi.',
+    type: 'boolean',
+    default: 'false',
+  },
+]
+}
