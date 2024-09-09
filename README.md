@@ -1,10 +1,17 @@
+## Used Languages
+
+js-cookie
+tailwind
+react-router-dom
+node.js 
+
 ## Available Scripts
 
 In the project directory, you can run:
 
 ## Available Demo version of the site
 
-Netlify: https://react-ui-uraimoff.netlify.app
+Netlify: https://docui.netlify.app
 
 ### `npm start`
 
