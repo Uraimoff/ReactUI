@@ -260,6 +260,7 @@ const Navbar = () => {
               </Nav>
               <div className="w-full flex items-center ml-[5px] gap-[5px] ">
                 <Link
+                  title='logout'
                   theme={theme}
                   isHome={isHome}
                   scrolled={scrolled}

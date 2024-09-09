@@ -60,7 +60,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="z-50 relative" ref={dropdownRef}>
+    <div className="z-50 relative" title={language==='en'?'language':language==='ru'?'Язык':'til'} ref={dropdownRef}>
       <button className=" w-8 flex justify-center  sm:m-0" onClick={toggleDropdown}>
         <img
           className="block hover:opacity-60 transition-all duration-400 h-8 w-11 sm:w-8  border border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent"

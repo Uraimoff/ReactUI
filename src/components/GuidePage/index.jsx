@@ -82,7 +82,11 @@ const Guides = () => {
       } p-6`}
     >
       <div className="max-w-[1240px] w-full mx-auto space-y-12">
-        <h1 className="text-4xl font-bold">
+        <h1 title={language === "en"
+            ? "DocUI Documentation"
+            : language === "ru"
+            ? "Документация DocUI"
+            : "DocUI Hujjati"} className="text-4xl font-bold">
           {language === "en"
             ? "DocUI Documentation"
             : language === "ru"

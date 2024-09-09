@@ -24,7 +24,7 @@ const ThemeToggle = ({ishome, auth, scroll}) => {
         }
     };
     return (
-        <button  className='block w-8 h-8 hover:opacity-60 transition-all duration-400 ' onClick={toggleTheme}>
+        <button title='theme toggle' className='block w-8 h-8 hover:opacity-60 transition-all duration-400 ' onClick={toggleTheme}>
            <img className='block h-full w-11   border   border-gray-500 rounded-md p-[3px] lg:p-1.5 bg-transparent' src={iconSrc()} alt='change'/> 
         </button>
     );
