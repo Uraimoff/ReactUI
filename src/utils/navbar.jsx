@@ -9,6 +9,7 @@ import MusicPlayer from "../components/Component/MusicPlayer";
 import Parallax from "../components/Component/Parallax";
 import Sidebar from "../components/Component/SideBar";
 import VideoPlayer from "../components/Component/VideoPlayer";
+import PaginationPage from "../components/Component/PaginationPage";
 import Authorization from "../pages/Authorization";
 import Blog from "../pages/Blog";
 import Components from "../pages/Components";
@@ -165,6 +166,16 @@ export const navbar = [
     titleru: "Боковые панели",
     titleuz: "Yon oynalar",
     path: "/sidebar",
+    private: false,
+    hidden: false,
+    component: true,
+  },
+  {
+    element: <PaginationPage/>,
+    title: "Pagination",
+    titleru: "Pagination",
+    titleuz: "Pagination",
+    path: "/pagination",
     private: false,
     hidden: false,
     component: true,

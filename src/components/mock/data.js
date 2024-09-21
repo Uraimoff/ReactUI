@@ -418,6 +418,101 @@ export default EyeLoginForm;
     },
 
   ]
+  export const Paginations =[
+    {
+      id: 1,
+      title: 'Pagination component for professionals',
+      content: 'something',
+      component: `
+import React, { useState } from 'react';
+
+const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
+  const [page, setPage] = useState(currentPage);
+
+  const handleClick = (newPage) => {
+    setPage(newPage);
+    setCurrentPage(newPage);
+  };
+
+  return (
+    <div className="flex justify-center items-center space-x-2 mt-4">
+      {/* Previous Button */}
+      <button
+        onClick={() => handleClick(page - 1)}
+        disabled={page === 1}
+        className={'border rounded w-10 h-10 flex items-center justify-center "$"{page === 1 ? 'opacity-50 cursor-not-allowed' : ''}'}
+      >
+        &lt;
+      </button>
+
+      {/* First Page */}
+      {page !== 1 && (
+        <button
+          onClick={() => handleClick(1)}
+          className={'border rounded w-10 h-10 flex items-center justify-center "$"{page === 1 ? 'bg-blue-500 text-white' : ''}'}
+        >
+          1
+        </button>
+      )}
+
+      {/* Ellipsis */}
+      {page > 3 && <span className="p-2">...</span>}
+
+      {/* Middle Pages */}
+      {page > 2 && (
+        <button
+          onClick={() => handleClick(page - 1)}
+          className="border rounded w-10 h-10 flex items-center justify-center"
+        >
+          {page - 1}
+        </button>
+      )}
+      <button
+        onClick={() => handleClick(page)}
+        className="border rounded w-10 h-10 flex items-center justify-center bg-blue-500 text-white"
+      >
+        {page}
+      </button>
+      {page < totalPages - 1 && (
+        <button
+          onClick={() => handleClick(page + 1)}
+          className="border rounded w-10 h-10 flex items-center justify-center"
+        >
+          {page + 1}
+        </button>
+      )}
+
+      {/* Ellipsis */}
+      {page < totalPages - 2 && <span className="p-2">...</span>}
+
+      {/* Last Page */}
+      {page !== totalPages && (
+        <button
+          onClick={() => handleClick(totalPages)}
+          className={"'"border rounded w-10 h-10 flex items-center justify-center "$"{page === totalPages ? 'bg-blue-500 text-white' : ''}'}
+        >
+          {totalPages}
+        </button>
+      )}
+
+      {/* Next Button */}
+      <button
+        onClick={() => handleClick(page + 1)}
+        disabled={page === totalPages}
+        className={'border rounded w-10 h-10 flex items-center justify-center "$"{page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}'}
+      >
+        &gt;
+      </button>
+    </div>
+  );
+};
+
+export default Pagination;
+      `,
+      description: 'When there are more than a few options to choose from, you can wrap them in a Dropdown. By hovering or clicking on the trigger, a dropdown menu will appear, which allows you to choose an option and execute the relevant action. ',
+    },
+
+  ];
 
  export  const buttonApi={en: [
   {
@@ -467,3 +562,137 @@ uz: [
   },
 ]
 }
+export const PaginationApi = {
+  en: [
+    {
+      property: 'totalPages',
+      description: 'The total number of pages available for pagination.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'currentPage',
+      description: 'The current page number selected by the user.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'setCurrentPage',
+      description: 'Function to update the current page number.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'pageSize',
+      description: 'The number of items per page.',
+      type: 'number',
+      default: '10',
+    },
+    {
+      property: 'onPageChange',
+      description: 'Callback function triggered when the user changes the page.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'showFirstLast',
+      description: 'Whether to display buttons for the first and last page.',
+      type: 'boolean',
+      default: 'true',
+    },
+    {
+      property: 'buttonSize',
+      description: 'Defines the size of the pagination buttons.',
+      type: 'string',
+      default: '"medium"',
+    },
+  ],
+  ru: [
+    {
+      property: 'totalPages',
+      description: 'Общее количество доступных страниц для пагинации.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'currentPage',
+      description: 'Текущий выбранный номер страницы.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'setCurrentPage',
+      description: 'Функция для обновления текущего номера страницы.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'pageSize',
+      description: 'Количество элементов на странице.',
+      type: 'number',
+      default: '10',
+    },
+    {
+      property: 'onPageChange',
+      description: 'Функция обратного вызова, срабатывающая при изменении страницы пользователем.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'showFirstLast',
+      description: 'Показывать кнопки для первой и последней страницы.',
+      type: 'boolean',
+      default: 'true',
+    },
+    {
+      property: 'buttonSize',
+      description: 'Определяет размер кнопок пагинации.',
+      type: 'string',
+      default: '"средний"',
+    },
+  ],
+  uz: [
+    {
+      property: 'totalPages',
+      description: 'Paginatsiya uchun mavjud sahifalar soni.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'currentPage',
+      description: 'Foydalanuvchi tanlagan joriy sahifa raqami.',
+      type: 'number',
+      default: '1',
+    },
+    {
+      property: 'setCurrentPage',
+      description: 'Joriy sahifa raqamini yangilash funksiyasi.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'pageSize',
+      description: 'Sahifadagi elementlar soni.',
+      type: 'number',
+      default: '10',
+    },
+    {
+      property: 'onPageChange',
+      description: 'Foydalanuvchi sahifani o‘zgartirganda chaqiriladigan callback funksiyasi.',
+      type: 'function',
+      default: 'undefined',
+    },
+    {
+      property: 'showFirstLast',
+      description: 'Birinchi va oxirgi sahifa tugmalarini ko‘rsatish.',
+      type: 'boolean',
+      default: 'true',
+    },
+    {
+      property: 'buttonSize',
+      description: 'Paginatsiya tugmalari o‘lchamini belgilaydi.',
+      type: 'string',
+      default: '"o‘rta"',
+    },
+  ],
+};
