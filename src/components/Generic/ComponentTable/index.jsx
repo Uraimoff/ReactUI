@@ -54,7 +54,7 @@ const ComponentTable = ({ children,wholeCode, Title, Descriptions, code }) => {
 
   return (
     <div
-      className={`w-full max-w-2xl p-4 mb-[15px] align-top inline-block   transition-shadow   border  rounded-lg ${
+      className={`w-full max-w-2xl md:max-w-[400px] p-4 mb-[15px] align-top inline-block   transition-shadow   border  rounded-lg ${
         theme === "light"
           ? "bg-lightBg text-lightText hover:shadow-justShadow border-gray-700"
           : "bg-darkBg text-darkText hover:shadow-blackShadow border-gray-600"
@@ -111,7 +111,7 @@ const ComponentTable = ({ children,wholeCode, Title, Descriptions, code }) => {
    "Show")}
       </button>
       {show && (
-        <div className="w-full md:max-w-[350px] ">
+        <div className="w-full mt-[10px] max-h-[400px] overflow-auto">
           <SyntaxHighlighter
             language="javascript"
             className="text-[13px]"
