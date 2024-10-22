@@ -69,7 +69,7 @@ const LanguageSwitcher = () => {
         />
       </button>
       <div
-        className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg ${
+        className={`origin-top-right absolute right-0 mt-2 w-12 rounded-md shadow-lg ${
           theme==='light'? 'bg-white':'bg-[#262626]'
         } ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
           isOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
@@ -81,7 +81,7 @@ const LanguageSwitcher = () => {
             onClick={() => handleLanguageChange(value.code)}
             className={`block w-full text-left px-4 py-2 text-sm ${theme==='light' ? " text-gray-700 hover:bg-gray-100" : "bg-[#262626] text-white hover:bg-[#808080]"}`}
             >
-            {value.language}
+            {value.code}
           </button>
           ))}
         </div>
