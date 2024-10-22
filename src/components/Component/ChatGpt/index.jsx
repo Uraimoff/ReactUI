@@ -28,35 +28,36 @@ const ChatGpt = () => {
   const addUserMessage = (message) => {
     setChat([...chat, { type: "user", message }]);
     setValue("");
-    fetch("https://api.openai.com/v1/engines/davinci-codex/completions", {
+    fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        prompt: message,
+        model: "gpt-3.5-turbo",  // or gpt-4
+        messages: [{ role: "user", content: message }],
         max_tokens: 150,
       }),
     })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok ' + res.statusText);
-        }
-        return res.json();
-      })
-      .then((res) => {
-        console.log("Response from API:", res);
-        if (res.choices && res.choices.length > 0) {
-          setChat((chat) => [...chat, { type: 'ai', message: res.choices[0].text }]);
-        } else {
-          throw new Error('Unexpected response structure');
-        }
-      })
-      .catch((error) => {
-        console.error('There was a problem with the fetch operation:', error);
-        setChat((chat) => [...chat, { type: 'ai', message: `Error: Could not get response from AI (${error.message})` }]);
-      });
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok ' + res.statusText);
+      }
+      return res.json();
+    })
+    .then((res) => {
+      console.log("Response from API:", res);
+      if (res.choices && res.choices.length > 0) {
+        setChat((chat) => [...chat, { type: 'ai', message: res.choices[0].message.content }]);
+      } else {
+        throw new Error('Unexpected response structure');
+      }
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+      setChat((chat) => [...chat, { type: 'ai', message: `Error: Could not get response from AI (${error.message})` }]);
+    });
   };
 
   const handlePress = (e) => {

@@ -15,6 +15,7 @@ import Blog from "../pages/Blog";
 import Components from "../pages/Components";
 import Guide from "../pages/Guide";
 import Home from "../pages/Home";
+import Shadow from "../components/Component/Shadow";
 
 // const Home = React.lazy(()=>import("./../pages/Home"));
 export const lang=[
@@ -196,6 +197,16 @@ export const navbar = [
     titleru: "Логины",
     titleuz: "Ro'yxatda o'tish qismlari",
     path: "/logins",
+    private: false,
+    hidden: false,
+    component: true,
+  },
+  {
+    element: <Shadow/>,
+    title: "Shadows",
+    titleru: "Тени",
+    titleuz: "Soya qismlari",
+    path: "/shadow",
     private: false,
     hidden: false,
     component: true,

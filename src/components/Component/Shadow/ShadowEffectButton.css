@@ -1,0 +1,49 @@
+/* Scoped custom light effect and styles for shadow effect */
+
+.shadow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f0f0f0; */
+    position: relative;
+  }
+  
+  /* Styling for the button */
+  .shadow-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    /* background-color: #fff; */
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  /* Shadow follows the cursor, now with more contrast */
+  .shadow-button:hover {
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Custom light effect around the cursor */
+  .shadow-container::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* background: rgba(255, 255, 255, 0.8); */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1000;
+  }
+  
+  .shadow-container:hover::before {
+    display: block;
+  }
+  
+  /* Shadow grows and intensifies */
+  .shadow-button:hover::before {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent);
+  }
