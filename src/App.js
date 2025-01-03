@@ -10,7 +10,6 @@ import {navbar } from "./utils/navbar";
 import Authorization from "./pages/Authorization";
 import { useEffect } from "react";
 
-// so the bugs for tomorrow 17.01.2023 is fix components scrolling bug of the body and the sidebar finish before lunch
 // after lunch make add to your useState to display code for styled components and jsx)) happy hacking
 function App() {
   const navigate = useNavigate();

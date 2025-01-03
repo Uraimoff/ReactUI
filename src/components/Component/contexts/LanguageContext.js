@@ -1,21 +1,29 @@
 import React, { createContext, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import { useLocation } from 'react-router-dom'; // Assuming you are using react-router
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en'); // default language
+  const [language, setLanguage] = useState(() => Cookies.get('language') || 'en'); // Default language initialized from cookies
+  const location = useLocation(); // Hook to get location object
 
   useEffect(() => {
-    const savedLanguage = Cookies.get('language');
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
+    // Check URL for any language settings
+    const searchParams = new URLSearchParams(location.search);
+    const urlLanguage = searchParams.get('lang');
+    if (urlLanguage && urlLanguage !== language) {
+      updateLanguage(urlLanguage); // Call updateLanguage function to handle state and cookie update
     }
-  }, []);
+  }, [location, language]); 
+
+  const updateLanguage = (newLanguage) => {
+    setLanguage(newLanguage);
+    Cookies.set('language', newLanguage, { expires: 30 });
+  };
 
   const changeLanguage = (newLanguage) => {
-    setLanguage(newLanguage);
-    Cookies.set('language', newLanguage, { expires: 30 }); // saves language for 30 days
+    updateLanguage(newLanguage);
   };
 
   return (
