@@ -37,9 +37,6 @@ export const navbar = [
     //
     // element: <React.Suspense fallback={<React.Fragment><div><div>Loading...</div></div></React.Fragment>}><Home /></React.Suspense>,
     element: <Home />,
-    title: "Home",
-    titleru: "Главный",
-    titleuz: "Asosiy",
     path: "/home",
     private: false,
     hidden: false,

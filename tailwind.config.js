@@ -20,6 +20,9 @@ module.exports = {
         justShadow: '0px 0px 16px -1px rgba(34, 60, 80, 0.14)',
         blackShadow: '0px 0px 16px -1px rgba(255, 255, 255, 0.4)',
       },
+      fontFamily: {
+        sans: [ 'system-ui', 'sans-serif']
+      }
     },
   },
   variants: {

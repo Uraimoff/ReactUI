@@ -53,13 +53,13 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Check if the scroll position is greater than 100vh
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > 700) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
-
+    console.log(window.innerHeight, 'bu innerheight')
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
