@@ -21,7 +21,7 @@ export default function LiveCodeEditor() {
       </head>
       <body>
         ${html}
-        <script>${js}<\/script>
+        <script>${js}</script>
       </body>
       </html>
     `);
