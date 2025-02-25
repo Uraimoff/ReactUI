@@ -16,6 +16,7 @@ import Components from "../pages/Components";
 import Guide from "../pages/Guide";
 import Home from "../pages/Home";
 import Shadow from "../components/Component/Shadow";
+import LiveCodeEditor from "../components/Component/LiveCodeEditor";
 
 // const Home = React.lazy(()=>import("./../pages/Home"));
 export const lang=[
@@ -94,6 +95,16 @@ export const navbar = [
     titleru: "Buttons",
     titleuz: "Buttons",
     path: "/buttons",
+    private: false,
+    hidden: false,
+    component: true,
+  },
+  {
+    element: <LiveCodeEditor/>,
+    title: "Live Code Editor",
+    titleru: "Live Code Editor",
+    titleuz: "Live Code Editor",
+    path: "/livecodeeditor",
     private: false,
     hidden: false,
     component: true,
